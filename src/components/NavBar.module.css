@@ -1,0 +1,32 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+ul {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+li {
+  list-style: none;
+}
+
+.navbarContainer {
+  outline: 2px solid black;
+  padding: 20px;
+}
+
+.storeLogo {
+  max-height: 50px;
+}
+
+a {
+  text-decoration: none;
+}
+
+.navBarCart {
+  width: 40px;
+}

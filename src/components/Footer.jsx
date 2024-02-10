@@ -14,7 +14,7 @@ function Footer() {
         </div>
         <div className={styles.footerNavigationSvgs}>
           <div className={styles.footerUsefulLinks}>
-            <h2>Welcome to Excalibur Clothing Store</h2>
+            <h2>Useful Links</h2>
             <img className={styles.footerSvgs} src="./compass.svg" alt="" />
           </div>
           <li>

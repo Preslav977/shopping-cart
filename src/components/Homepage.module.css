@@ -1,0 +1,40 @@
+.homePageImg {
+  max-height: 100vh;
+  width: 100%;
+  object-fit: fill;
+}
+
+.mainContainer {
+  display: flex;
+  justify-content: center;
+}
+
+.mainContent {
+  z-index: 1;
+  display: flex;
+  justify-content: center;
+  position: absolute;
+  flex-direction: column;
+  color: white;
+  font-weight: bold;
+  margin-top: 5em;
+  text-align: center;
+}
+
+.buttonContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.buttonContainer {
+  margin-top: 50px;
+  padding: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.mainContentDesc {
+  margin-top: 20px;
+}

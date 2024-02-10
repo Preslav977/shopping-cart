@@ -1,49 +1,34 @@
 import { Link } from "react-router-dom";
-import PropTypes from "prop-types";
-
 import styles from "./NavBar.module.css";
 
-function NavBar({
-  homePathLogo,
-  homePathImgSrc,
-  homePathImgAlt,
-  homePath,
-  homePathName,
-  productsPath,
-  productsPathName,
-  aboutPath,
-  aboutPathName,
-  cartPath,
-  cartPathImgSrc,
-  cartPathImgAlt,
-}) {
+function NavBar() {
   return (
     <nav className={styles.navbarContainer}>
       <ul>
         <li>
-          <Link to={homePathLogo}>
+          <Link to="/">
             <img
               className={styles.storeLogo}
-              src={homePathImgSrc}
-              alt={homePathImgAlt}
+              src="./store-logo.jpg"
+              alt="Store logo"
             />
           </Link>
         </li>
         <li>
-          <Link to={homePath}>{homePathName}</Link>
+          <Link to="/">Home</Link>
         </li>
         <li>
-          <Link to={productsPath}>{productsPathName}</Link>
+          <Link to="/products">Products</Link>
         </li>
         <li>
-          <Link to={aboutPath}>{aboutPathName}</Link>
+          <Link to="/about">About</Link>
         </li>
         <li>
-          <Link to={cartPath}>
+          <Link to="/products/cart">
             <img
               className={styles.navBarCart}
-              src={cartPathImgSrc}
-              alt={cartPathImgAlt}
+              src="./shopping-cart.svg"
+              alt="Cart"
             />
           </Link>
         </li>
@@ -51,20 +36,5 @@ function NavBar({
     </nav>
   );
 }
-
-NavBar.propTypes = {
-  homePathLogo: PropTypes.string,
-  homePathImgSrc: PropTypes.string,
-  homePathImgAlt: PropTypes.string,
-  homePath: PropTypes.string,
-  homePathName: PropTypes.string,
-  productsPath: PropTypes.string,
-  productsPathName: PropTypes.string,
-  aboutPath: PropTypes.string,
-  aboutPathName: PropTypes.string,
-  cartPath: PropTypes.string,
-  cartPathImgSrc: PropTypes.string,
-  cartPathImgAlt: PropTypes.string,
-};
 
 export default NavBar;

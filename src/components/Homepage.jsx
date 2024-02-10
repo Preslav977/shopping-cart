@@ -12,23 +12,27 @@ function Homepage({
   homePageImgAlt,
 }) {
   return (
-    <main className={styles.mainContainer}>
-      <div className={styles.mainContent}>
-        <h1>{homePageHeader}</h1>
-        <div className={styles.mainContentDesc}>
-          <p>{homePageDesc}</p>
+    <div>
+      <main className={styles.mainContainer}>
+        <div className={styles.mainContent}>
+          <h1>{homePageHeader}</h1>
+          <div className={styles.mainContentDesc}>
+            <p>{homePageDesc}</p>
+          </div>
+          <p>{homePageMoreDesc}</p>
+          <div className={styles.buttonContainer}>
+            <button>
+              <Link to={pathToProducts}>{pathToProductsName}</Link>
+            </button>
+          </div>
         </div>
-        <p>{homePageMoreDesc}</p>
-      </div>
-      <button>
-        <Link to={pathToProducts}>{pathToProductsName}</Link>
-      </button>
-      <img
-        className={styles.homePageImg}
-        src={homePageImgSrc}
-        alt={homePageImgAlt}
-      />
-    </main>
+        <img
+          className={styles.homePageImg}
+          src={homePageImgSrc}
+          alt={homePageImgAlt}
+        />
+      </main>
+    </div>
   );
 }
 

@@ -10,6 +10,7 @@ import faceBookSvg from "./assets/facebook.svg";
 import twitterSvg from "./assets/twitter.svg";
 import instragramSvg from "./assets/instagram.svg";
 import youtubeSvg from "./assets/youtube.svg";
+import { Outlet } from "react-router-dom";
 
 function App() {
   return (
@@ -28,6 +29,7 @@ function App() {
         cartPathImgSrc={shoppingCart}
         cartPathImgAlt="Store logo"
       />
+      <Outlet />
       <Footer
         footerImgSrc={storeLogo}
         footerImgAlt="Store logo"

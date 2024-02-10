@@ -1,121 +1,66 @@
 import { Link } from "react-router-dom";
-import PropTypes from "prop-types";
 import styles from "./Footer.module.css";
 
-function Footer({
-  footerImgSrc,
-  footerImgAlt,
-  footerHeader,
-  footerCompassSvg,
-  footerHomePath,
-  footerHomePathName,
-  footerProductsPath,
-  footerProductsPathName,
-  footerAboutPath,
-  footerAbouthPathName,
-  footerHeaderContact,
-  footerLocation,
-  footerLocationSrc,
-  footerLocationDesc,
-  footerPhone,
-  footerPhoneSrc,
-  footerEmail,
-  footerEmailSrc,
-  footerSocials,
-  footerFacebookSrc,
-  footerTwitterSrc,
-  footerInstragramSrc,
-  footerYoutubeSrc,
-}) {
+function Footer() {
   return (
     <footer className={styles.footerContainer}>
       <div className={styles.footerContent}>
         <div className={styles.footerStoreLogo}>
           <img
             className={styles.footerStoreImg}
-            src={footerImgSrc}
-            alt={footerImgAlt}
+            src="./store-logo.jpg"
+            alt="Store logo"
           />
         </div>
         <div className={styles.footerNavigationSvgs}>
           <div className={styles.footerUsefulLinks}>
-            <h2>{footerHeader}</h2>
-            <img className={styles.footerSvgs} src={footerCompassSvg} alt="" />
+            <h2>Welcome to Excalibur Clothing Store</h2>
+            <img className={styles.footerSvgs} src="./compass.svg" alt="" />
           </div>
           <li>
-            <Link to={footerHomePath}>{footerHomePathName}</Link>
+            <Link to="/">Home</Link>
           </li>
           <li>
-            <Link to={footerProductsPath}>{footerProductsPathName}</Link>
+            <Link to="/products">Products</Link>
           </li>
           <li>
-            <Link to={footerAboutPath}>{footerAbouthPathName}</Link>
+            <Link to="/about">About</Link>
           </li>
         </div>
         <div className={styles.footerContactSection}>
-          <h4>{footerHeaderContact}</h4>
+          <h4>Contact Us</h4>
           <div className={styles.locationContainer}>
-            <p>{footerLocation}</p>
-            <img className={styles.footerSvgs} src={footerLocationSrc} alt="" />
+            <p>Location</p>
+            <img className={styles.footerSvgs} src="./map.svg" alt="" />
           </div>
-          <p>{footerLocationDesc}</p>
+          <p>Somewhere in EU</p>
           <div className={styles.phoneContainer}>
-            <p>{footerPhone}</p>
-            <img className={styles.footerSvgs} src={footerPhoneSrc} alt="" />
+            <p>Phone</p>
+            <img className={styles.footerSvgs} src="./phone.svg" alt="" />
           </div>
           <div className={styles.emailContainer}>
-            <p>{footerEmail}</p>
-            <img className={styles.footerSvgs} src={footerEmailSrc} alt="" />
+            <p>Email</p>
+            <img className={styles.footerSvgs} src="./email.svg" alt="" />
           </div>
         </div>
         <div className={styles.socialNetworksContainer}>
-          <h4>{footerSocials}</h4>
+          <h4>Social Networks</h4>
           <div>
-            <img className={styles.footerSvgs} src={footerFacebookSrc} alt="" />
+            <img className={styles.footerSvgs} src="./facebook.svg" alt="" />
           </div>
           <div>
-            <img className={styles.footerSvgs} src={footerTwitterSrc} alt="" />
+            <img className={styles.footerSvgs} src="./twitter.svg" alt="" />
           </div>
           <div>
-            <img
-              className={styles.footerSvgs}
-              src={footerInstragramSrc}
-              alt=""
-            />
+            <img className={styles.footerSvgs} src="./instagram.svg" alt="" />
           </div>
           <div>
-            <img className={styles.footerSvgs} src={footerYoutubeSrc} alt="" />
+            <img className={styles.footerSvgs} src="./youtube.svg" alt="" />
           </div>
         </div>
       </div>
     </footer>
   );
 }
-
-Footer.propTypes = {
-  footerImgSrc: PropTypes.string,
-  footerImgAlt: PropTypes.string,
-  footerHeader: PropTypes.string,
-  footerCompassSvg: PropTypes.string,
-  footerHomePath: PropTypes.string,
-  footerHomePathName: PropTypes.string,
-  footerProductsPath: PropTypes.string,
-  footerProductsPathName: PropTypes.string,
-  footerAboutPath: PropTypes.string,
-  footerAbouthPathName: PropTypes.string,
-  footerHeaderContact: PropTypes.string,
-  footerLocation: PropTypes.string,
-  footerLocationSrc: PropTypes.string,
-  footerLocationDesc: PropTypes.string,
-  footerPhone: PropTypes.string,
-  footerPhoneSrc: PropTypes.string,
-  footerEmail: PropTypes.string,
-  footerEmailSrc: PropTypes.string,
-  footerSocials: PropTypes.string,
-  footerFacebookSrc: PropTypes.string,
-  footerTwitterSrc: PropTypes.string,
-  footerInstragramSrc: PropTypes.string,
-  footerYoutubeSrc: PropTypes.string,
-};
 
 export default Footer;

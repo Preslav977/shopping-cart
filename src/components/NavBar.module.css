@@ -25,8 +25,13 @@ li {
 
 a {
   text-decoration: none;
+  color: black;
 }
 
 .navBarCart {
   width: 40px;
+}
+
+h2 {
+  margin-right: 5px;
 }

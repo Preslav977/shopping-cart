@@ -1,0 +1,44 @@
+.footerContainer {
+  height: auto;
+}
+
+.footerContent {
+  outline: 2px solid black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.footerStoreImg {
+  max-height: 50px;
+}
+
+.footerSvgs {
+  width: 30px;
+}
+
+.footerUsefulLinks {
+  display: flex;
+  align-items: center;
+}
+
+.locationContainer,
+.phoneContainer,
+.emailContainer {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.socialNetworksContainer {
+  margin-top: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5px;
+}
+
+li {
+  margin-top: 10px;
+}

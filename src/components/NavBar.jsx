@@ -52,9 +52,9 @@ function NavBar({
   );
 }
 
-NavBar.PropTypes = {
+NavBar.propTypes = {
   homePathLogo: PropTypes.string,
-  homePathImgSrc: PropTypes.object,
+  homePathImgSrc: PropTypes.string,
   homePathImgAlt: PropTypes.string,
   homePath: PropTypes.string,
   homePathName: PropTypes.string,
@@ -63,7 +63,7 @@ NavBar.PropTypes = {
   aboutPath: PropTypes.string,
   aboutPathName: PropTypes.string,
   cartPath: PropTypes.string,
-  cartPathImgSrc: PropTypes.object,
+  cartPathImgSrc: PropTypes.string,
   cartPathImgAlt: PropTypes.string,
 };
 

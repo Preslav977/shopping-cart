@@ -4,7 +4,7 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import App from "./App.jsx";
 import Homepage from "./components/Homepage.jsx";
 
-const rounter = createBrowserRouter([
+const router = createBrowserRouter([
   {
     path: "/",
     element: <App />,
@@ -14,6 +14,6 @@ const rounter = createBrowserRouter([
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
-    <RouterProvider router={rounter} />
+    <RouterProvider router={router} />
   </React.StrictMode>,
 );

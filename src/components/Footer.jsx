@@ -28,7 +28,7 @@ function Footer() {
           </li>
         </div>
         <div className={styles.footerContactSection}>
-          <h4>Contact Us</h4>
+          <h3>Contact Us</h3>
           <div className={styles.locationContainer}>
             <p>Location</p>
             <img className={styles.footerSvgs} src="./map.svg" alt="" />

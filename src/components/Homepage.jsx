@@ -16,8 +16,8 @@ function Homepage() {
           </div>
           <p>Why wait for tomorrow, when you can do this now!</p>
           <div className={styles.buttonContainer}>
-            <button>
-              <Link to="/products">Show Now</Link>
+            <button data-testid="button">
+              <Link to="/products">Shop Now</Link>
             </button>
           </div>
         </div>

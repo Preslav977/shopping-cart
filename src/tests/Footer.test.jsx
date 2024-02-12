@@ -4,7 +4,12 @@ import Footer from "../components/Footer";
 
 describe("Footer component with Links elements and other elements textContents", () => {
   it("should render the component correctly and get the textContents", () => {
-    const routes = [{ path: "/", element: <Footer /> }];
+    const routes = [
+      {
+        path: "/",
+        element: <Footer />,
+      },
+    ];
 
     const router = createMemoryRouter(routes, {});
 

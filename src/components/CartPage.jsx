@@ -12,19 +12,22 @@ import styles from "./CartPage.module.css";
 //if the cart is empty show a message that it is ?
 
 function CartPage() {
-  const [shoppingCart, setShoppingCart] = useState([
-    { name: "Mens Casual Premium Slim Fit T-Shirts", price: "22.30 $" },
-  ]);
+  const [shoppingCart, setShoppingCart] = useState([]);
+
+  const amountOfProducsInCart = shoppingCart.filter(
+    (product) => product,
+  ).length;
 
   if (shoppingCart.length === 0) {
     return (
       <div className={styles.emptyCartContainer}>
         <div className={styles.emptyCartContent}>
           <div className={styles.emptyCartSubContent}>
-            <p>You cart is empty !</p>
+            <p>Your cart is empty ! </p>
+            <p>Click the button to start shopping !</p>
             <div className={styles.btnShopNowContainer}>
-              <button className={styles.btnShopNow}>
-                <Link path="/products">Shop Now</Link>
+              <button data-testid="button" className={styles.btnShopNow}>
+                <Link to="/products">Shop Now</Link>
               </button>
             </div>
           </div>
@@ -35,6 +38,9 @@ function CartPage() {
 
   return (
     <>
+      <div className={styles.cartItemsAmount}>
+        <p>{amountOfProducsInCart}</p>
+      </div>
       <div className={styles.productsCartWrapper}>
         <div className={styles.productCartSubWrapper}>
           <div className={styles.productsCartContainer}>

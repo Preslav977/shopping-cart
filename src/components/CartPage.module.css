@@ -1,0 +1,105 @@
+.emptyCartContainer {
+  display: flex;
+  justify-content: center;
+  height: 100vh;
+}
+
+.emptyCartContent {
+  outline: 2px solid black;
+  height: 500px;
+  width: 700px;
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.emptyCartSubContent {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.btnShopNowContainer {
+  display: flex;
+  justify-content: center;
+}
+
+.btnShopNow {
+  margin-top: 20px;
+  text-align: center;
+}
+
+/* these styles above are used if the cart is empty */
+
+.productsCartWrapper {
+  outline: 2px solid black;
+  height: 100vh;
+  display: flex;
+  justify-content: space-between;
+}
+
+.productsCartContainer {
+  outline: 2px solid black;
+  display: flex;
+  justify-content: space-between;
+  height: 50px;
+  width: 100%;
+}
+
+.productsContent {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 150px;
+}
+
+.productsAddedToCart {
+  outline: 2px solid black;
+  text-align: center;
+  padding: 20px;
+}
+
+.productImgContainer {
+  outline: 2px solid black;
+  height: 100px;
+  width: 100px;
+}
+
+.productDescription {
+  align-items: flex-end;
+  justify-content: space-between;
+  display: flex;
+}
+
+.productQuantity {
+  width: 50px;
+}
+
+.estimatedPriceContainer {
+  outline: 2px solid black;
+  width: 800px;
+  height: 500px;
+  display: flex;
+  margin-right: 20px;
+  margin-top: 20px;
+  flex-direction: column;
+}
+
+.productCartSubWrapper {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  padding: 20px;
+}
+
+.estimatedTotal {
+  display: flex;
+  justify-content: space-between;
+}
+
+.btnPayContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 500px;
+}

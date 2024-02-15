@@ -1,4 +1,4 @@
-import { getByTestId, render, screen } from "@testing-library/react";
+import { render, screen } from "@testing-library/react";
 import NavBar from "../components/NavBar";
 import { RouterProvider, createMemoryRouter } from "react-router-dom";
 import App from "../App";

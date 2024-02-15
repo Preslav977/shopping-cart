@@ -18,13 +18,19 @@ function Footer() {
             <img className={styles.footerSvgs} src="./compass.svg" alt="" />
           </div>
           <li>
-            <Link to="/">Home</Link>
+            <Link data-testid="footer-home" to="/">
+              Home
+            </Link>
           </li>
           <li>
-            <Link to="/products">Products</Link>
+            <Link data-testid="footer-products" to="/products">
+              Products
+            </Link>
           </li>
           <li>
-            <Link to="/about">About</Link>
+            <Link data-testid="footer-about" to="/about">
+              About
+            </Link>
           </li>
         </div>
         <div className={styles.footerContactSection}>

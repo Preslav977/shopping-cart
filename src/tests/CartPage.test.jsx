@@ -1,4 +1,4 @@
-import { render, screen } from "@testing-library/react";
+import { getByTestId, render, screen } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import CartPage from "../components/CartPage";
 import { createMemoryRouter, RouterProvider } from "react-router-dom";
@@ -27,7 +27,7 @@ describe("CartPage component", () => {
     ).toMatch(/click the button to start shopping !/i);
   });
 
-  it("renders other HomePage, when the button is clicked", async () => {
+  it("renders HomePage, when the button is clicked", async () => {
     const routes = [
       {
         path: "/",

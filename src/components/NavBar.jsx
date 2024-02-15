@@ -15,16 +15,22 @@ function NavBar() {
           </Link>
         </li>
         <li>
-          <Link to="/">Home</Link>
+          <Link data-testid="home" to="/">
+            Home
+          </Link>
         </li>
         <li>
-          <Link to="/products">Products</Link>
+          <Link data-testid="products" to="/products">
+            Products
+          </Link>
         </li>
         <li>
-          <Link to="/about">About</Link>
+          <Link data-testid="about" to="/about">
+            About
+          </Link>
         </li>
         <li>
-          <Link to="/products/cart">
+          <Link data-testid="cart" to="/products/cart">
             <img
               className={styles.navBarCart}
               src="./shopping-cart.svg"

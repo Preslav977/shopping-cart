@@ -63,6 +63,7 @@ function CartPage() {
                     type="number"
                     name=""
                     id=""
+                    min={1}
                   />
                   <p>{product.price}</p>
                   <button>Remove</button>

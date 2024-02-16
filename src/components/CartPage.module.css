@@ -74,6 +74,9 @@
 
 .productQuantity {
   width: 50px;
+  outline: 2px solid black;
+  -moz-appearance: textfield;
+  text-align: center;
 }
 
 .estimatedPriceContainer {

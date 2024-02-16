@@ -1,4 +1,4 @@
-import { getByTestId, render, screen } from "@testing-library/react";
+import { render, screen } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import CartPage from "../components/CartPage";
 import { createMemoryRouter, RouterProvider } from "react-router-dom";

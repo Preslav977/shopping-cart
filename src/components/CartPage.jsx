@@ -1,6 +1,6 @@
-import { useState } from "react";
 import { Link } from "react-router-dom";
 import styles from "./CartPage.module.css";
+import { useOutletContext } from "react-router-dom";
 
 //click add to cart in order to show it to the cart
 //useState which is an empty array, create copy of the products state
@@ -12,13 +12,16 @@ import styles from "./CartPage.module.css";
 //if the cart is empty show a message that it is ?
 
 function CartPage() {
-  const [shoppingCart, setShoppingCart] = useState([]);
+  const [productsToCart, setProductsToCart] = useOutletContext();
 
-  const amountOfProducsInCart = shoppingCart.filter(
-    (product) => product,
-  ).length;
+  {
+    /* This is moved in the App in order to render the products in the cart */
+  }
+  // const amountOfProductsInCart = productsToCart.filter(
+  //   (product) => product,
+  // ).length;
 
-  if (shoppingCart.length === 0) {
+  if (productsToCart.length === 0) {
     return (
       <div className={styles.emptyCartContainer}>
         <div className={styles.emptyCartContent}>
@@ -38,9 +41,9 @@ function CartPage() {
 
   return (
     <>
-      <div className={styles.cartItemsAmount}>
-        <p>{amountOfProducsInCart}</p>
-      </div>
+      {/* <div className={styles.cartItemsAmount}>
+        <p>{amountOfProductsInCart}</p>
+      </div> */}
       <div className={styles.productsCartWrapper}>
         <div className={styles.productCartSubWrapper}>
           <div className={styles.productsCartContainer}>
@@ -48,7 +51,7 @@ function CartPage() {
             <p>1 item</p>
           </div>
           <div className={styles.productsContent}>
-            {shoppingCart.map((product) => (
+            {productsToCart.map((product) => (
               <div className={styles.productsAddedToCart} key={product}>
                 <p>{product.name}</p>
                 <div className={styles.productDescription}>

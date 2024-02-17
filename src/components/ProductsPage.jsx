@@ -7,6 +7,16 @@ function ProductsPage() {
       price: "25$",
       rating: "3.5",
     },
+    {
+      name: "Fjallraven - Foldsack No. 1 Backpack, Fits 15 Laptops",
+      price: "25$",
+      rating: "3.5",
+    },
+    {
+      name: "Fjallraven - Foldsack No. 1 Backpack, Fits 15 Laptops",
+      price: "25$",
+      rating: "3.5",
+    },
   ];
 
   return (
@@ -33,7 +43,33 @@ function ProductsPage() {
           </select>
         </div>
       </div>
-      <div className={styles.productsContainer}></div>
+      <div className={styles.productsContainer}>
+        {array.map((obj) => (
+          <div className={styles.productsContent} key={obj}>
+            <div className={styles.productsImgContainer}>
+              <img
+                className={styles.productsImg}
+                src="./store-logo.jpg"
+                alt=""
+              />
+            </div>
+            <div className={styles.productsDescription}>
+              <p>{obj.name}</p>
+              <p className={styles.productPrice}>{obj.price}</p>
+              <div className={styles.productsRatingContainer}>
+                <img src="" alt="" />
+                <p></p>
+              </div>
+            </div>
+            <div className={styles.productQuantityContainer}>
+              <input min={1} type="number" name="" id="" />
+            </div>
+            <div className={styles.addToCartBtn}>
+              <button>Add to Cart</button>
+            </div>
+          </div>
+        ))}
+      </div>
     </main>
   );
 }

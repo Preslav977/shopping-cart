@@ -34,4 +34,34 @@ p:nth-child(2) {
   outline: 2px solid black;
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+  gap: 20px;
+}
+
+.productsContent {
+  outline: 2px solid black;
+  height: 350px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.productsImg {
+  height: 140px;
+  margin-bottom: 10px;
+}
+
+.productsDescription {
+  /* outline: 2px solid black; */
+  text-align: center;
+}
+
+input {
+  width: 50px;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.productPrice {
+  margin-top: 10px;
 }

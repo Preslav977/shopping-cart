@@ -14,13 +14,6 @@ import { useOutletContext } from "react-router-dom";
 function CartPage() {
   const [productsToCart, setProductsToCart] = useOutletContext();
 
-  {
-    /* This is moved in the App in order to render the products in the cart */
-  }
-  // const amountOfProductsInCart = productsToCart.filter(
-  //   (product) => product,
-  // ).length;
-
   if (productsToCart.length === 0) {
     return (
       <div className={styles.emptyCartContainer}>
@@ -41,9 +34,6 @@ function CartPage() {
 
   return (
     <>
-      {/* <div className={styles.cartItemsAmount}>
-        <p>{amountOfProductsInCart}</p>
-      </div> */}
       <div className={styles.productsCartWrapper}>
         <div className={styles.productCartSubWrapper}>
           <div className={styles.productsCartContainer}>
@@ -58,15 +48,23 @@ function CartPage() {
                   <div className={styles.productImgContainer}>
                     <img src="" alt="" />
                   </div>
-                  <input
-                    className={styles.productQuantity}
-                    type="number"
-                    name=""
-                    id=""
-                    min={1}
-                  />
-                  <p>{product.price}</p>
-                  <button>Remove</button>
+                  <div className={styles.productQuantityContainer}>
+                    <button>+</button>
+                    <input
+                      className={styles.productQuantity}
+                      type="number"
+                      name=""
+                      id=""
+                      min={1}
+                    />
+                    <button>-</button>
+                  </div>
+                  <div>
+                    <p>{product.price}</p>
+                  </div>
+                  <div>
+                    <button>Remove</button>
+                  </div>
                 </div>
               </div>
             ))}

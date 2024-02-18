@@ -6,7 +6,12 @@ import "./style.css";
 import React from "react";
 
 function App() {
-  const [productsToCart, setProductsToCart] = React.useState([1]);
+  const [productsToCart, setProductsToCart] = React.useState([
+    {
+      name: "Fjallraven - Foldsack No. 1 Backpack, Fits 15 Laptops",
+      price: "105$",
+    },
+  ]);
 
   const amountOfProductsInCart = productsToCart.filter(
     (product) => product,

@@ -70,13 +70,16 @@
   align-items: flex-end;
   justify-content: space-between;
   display: flex;
+  align-self: flex-end;
+  outline: 2px solid red;
 }
 
 .productQuantity {
   width: 50px;
-  outline: 2px solid black;
+  /* outline: 2px solid black; */
   -moz-appearance: textfield;
   text-align: center;
+  margin-bottom: 0;
 }
 
 .estimatedPriceContainer {
@@ -107,16 +110,3 @@
   align-items: center;
   height: 500px;
 }
-
-/* .cartItemsAmount {
-  position: absolute;
-  top: 28px;
-  right: 15px;
-  width: 20px;
-  border: 2px solid red;
-  border-radius: 50%;
-  background-color: red;
-  color: white;
-  text-align: center;
-  font-size: 15px;
-} */

@@ -60,8 +60,14 @@ input {
   width: 50px;
   margin-bottom: 20px;
   text-align: center;
+  -moz-appearance: textfield;
 }
 
 .productPrice {
   margin-top: 10px;
+}
+
+.buttonIncrementQuantity,
+.buttonDecrementQuantity {
+  width: 25px;
 }

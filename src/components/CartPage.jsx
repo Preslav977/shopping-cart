@@ -49,7 +49,9 @@ function CartPage() {
                     <img src="" alt="" />
                   </div>
                   <div className={styles.productQuantityContainer}>
-                    <button>+</button>
+                    <button className={styles.buttonIncrementQuantity}>
+                      <span>+</span>
+                    </button>
                     <input
                       className={styles.productQuantity}
                       type="number"
@@ -57,7 +59,9 @@ function CartPage() {
                       id=""
                       min={1}
                     />
-                    <button>-</button>
+                    <button className={styles.buttonDecrementQuantity}>
+                      <span>-</span>
+                    </button>
                   </div>
                   <div>
                     <p>{product.price}</p>

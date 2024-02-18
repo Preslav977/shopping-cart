@@ -1,24 +1,6 @@
 import styles from "./ProductsPage.module.css";
 
-function ProductsPage() {
-  let array = [
-    {
-      name: "Fjallraven - Foldsack No. 1 Backpack, Fits 15 Laptops",
-      price: "25$",
-      rating: "3.5",
-    },
-    {
-      name: "Fjallraven - Foldsack No. 1 Backpack, Fits 15 Laptops",
-      price: "25$",
-      rating: "3.5",
-    },
-    {
-      name: "Fjallraven - Foldsack No. 1 Backpack, Fits 15 Laptops",
-      price: "25$",
-      rating: "3.5",
-    },
-  ];
-
+function ProductsPage({ productInformation }) {
   return (
     <main className={styles.mainContainer}>
       <div className={styles.mainContentHeader}>
@@ -43,33 +25,39 @@ function ProductsPage() {
           </select>
         </div>
       </div>
-      <div className={styles.productsContainer}>
+      {/* <div className={styles.productsContainer}>
         {array.map((obj) => (
           <div className={styles.productsContent} key={obj}>
             <div className={styles.productsImgContainer}>
               <img
                 className={styles.productsImg}
-                src="./store-logo.jpg"
+                src={productInformation.ImgSrc}
                 alt=""
               />
             </div>
             <div className={styles.productsDescription}>
-              <p>{obj.name}</p>
-              <p className={styles.productPrice}>{obj.price}</p>
+              <p>{productInformation.name}</p>
+              <p className={styles.productPrice}>{productInformation.price}</p>
               <div className={styles.productsRatingContainer}>
                 <img src="" alt="" />
                 <p></p>
               </div>
             </div>
             <div className={styles.productQuantityContainer}>
+              <button className={styles.buttonIncrementQuantity}>
+                <span>+</span>
+              </button>
               <input min={1} type="number" name="" id="" />
+              <button className={styles.buttonIncrementQuantity}>
+                <span>-</span>
+              </button>
             </div>
             <div className={styles.addToCartBtn}>
               <button>Add to Cart</button>
             </div>
           </div>
         ))}
-      </div>
+      </div> */}
     </main>
   );
 }

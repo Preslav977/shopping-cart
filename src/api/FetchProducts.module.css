@@ -1,0 +1,40 @@
+.productsContainer {
+  outline: 2px solid black;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+
+.mainContainer {
+  outline: 2px solid black;
+}
+
+.dropDownMenu {
+  border: 1px solid #fff;
+  background-color: transparent;
+  text-align: center;
+  font-size: 17px;
+}
+
+.dropDownMenu:hover {
+  background-color: lightblue;
+}
+
+.mainContentSubHeader {
+  outline: 2px solid black;
+  display: flex;
+  align-items: center;
+}
+
+span {
+  font-size: 12px;
+  margin-left: 5px;
+  margin-right: 5px;
+}
+
+p:nth-child(2) {
+  margin-left: 5px;
+  margin-right: 5px;
+}

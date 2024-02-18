@@ -1,45 +1,6 @@
-.mainContainer {
-  outline: 2px solid black;
-  height: 100vh;
-}
-
-.dropDownMenu {
-  border: 1px solid #fff;
-  background-color: transparent;
-  text-align: center;
-  font-size: 17px;
-  /* width: 180px; */
-}
-
-.dropDownMenu:hover {
-  background-color: lightblue;
-}
-
-.mainContentSubHeader {
-  outline: 2px solid black;
-  display: flex;
-  align-items: center;
-}
-
-span {
-  font-size: 12px;
-}
-
-p:nth-child(2) {
-  margin-left: 5px;
-  margin-right: 5px;
-}
-
-.productsContainer {
-  outline: 2px solid black;
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
-  gap: 20px;
-}
-
 .productsContent {
   outline: 2px solid black;
-  height: 350px;
+  height: 400px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -52,7 +13,6 @@ p:nth-child(2) {
 }
 
 .productsDescription {
-  /* outline: 2px solid black; */
   text-align: center;
 }
 
@@ -65,9 +25,17 @@ input {
 
 .productPrice {
   margin-top: 10px;
+  margin-bottom: 10px;
 }
 
 .buttonIncrementQuantity,
 .buttonDecrementQuantity {
   width: 25px;
+  margin-top: 10px;
+}
+
+.productsRatingContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }

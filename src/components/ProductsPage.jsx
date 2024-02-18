@@ -1,4 +1,5 @@
 import styles from "./ProductsPage.module.css";
+import PropTypes from "prop-types";
 
 function ProductsPage({
   productImgSrc,
@@ -19,7 +20,7 @@ function ProductsPage({
             <p className={styles.productPrice}>{productPrice}$</p>
             <div className={styles.productsRatingContainer}>
               <p>{productRating}</p>
-              <span>/</span>
+              <span> /</span>
               <p>{productCount}</p>
             </div>
           </div>
@@ -40,5 +41,13 @@ function ProductsPage({
     </main>
   );
 }
+
+ProductsPage.propTypes = {
+  productImgSrc: PropTypes.string,
+  productName: PropTypes.string,
+  productPrice: PropTypes.number,
+  productRating: PropTypes.number,
+  productCount: PropTypes.number,
+};
 
 export default ProductsPage;

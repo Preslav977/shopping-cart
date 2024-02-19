@@ -20,7 +20,7 @@ function ProductsPage({
             <p className={styles.productPrice}>{productPrice}$</p>
             <div className={styles.productsRatingContainer}>
               <p>{productRating}</p>
-              <span> /</span>
+              <span>/</span>
               <p>{productCount}</p>
             </div>
           </div>

@@ -10,18 +10,20 @@ function ProductsPage({
 }) {
   return (
     <main className={styles.mainContainer}>
-      <div className={styles.productsContainer}>
+      <div data-testid="container" className={styles.productsContainer}>
         <div className={styles.productsContent}>
           <div className={styles.productsImgContainer}>
             <img className={styles.productsImg} src={productImgSrc} alt="" />
           </div>
           <div className={styles.productsDescription}>
             <p>{productName}</p>
-            <p className={styles.productPrice}>{productPrice}$</p>
+            <p data-testid="price" className={styles.productPrice}>
+              {productPrice}$
+            </p>
             <div className={styles.productsRatingContainer}>
-              <p>{productRating}</p>
+              <p data-testid="rating">{productRating}</p>
               <span>/</span>
-              <p>{productCount}</p>
+              <p data-testid="count">{productCount}</p>
             </div>
           </div>
           <div className={styles.productQuantityContainer}>

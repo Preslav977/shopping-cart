@@ -24,6 +24,8 @@ const FetchProducts = () => {
   if (error) return <p>A network error was encountered</p>;
   if (loading) return <p>Loading...</p>;
 
+  console.log(products);
+
   return (
     <>
       <div className={styles.mainContentHeader}>

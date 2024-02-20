@@ -42,11 +42,15 @@ function CartPage() {
           </div>
           <div className={styles.productsContent}>
             {productsToCart.map((product) => (
-              <div className={styles.productsAddedToCart} key={product}>
-                <p>{product.name}</p>
+              <div className={styles.productsAddedToCart} key={product.id}>
+                <p>{product.title}</p>
                 <div className={styles.productDescription}>
                   <div className={styles.productImgContainer}>
-                    <img src="" alt="" />
+                    <img
+                      className={styles.productImg}
+                      src={product.image}
+                      alt=""
+                    />
                   </div>
                   <div className={styles.productQuantityContainer}>
                     <button className={styles.buttonIncrementQuantity}>
@@ -64,7 +68,7 @@ function CartPage() {
                     </button>
                   </div>
                   <div>
-                    <p>{product.price}</p>
+                    <p>{product.price}$</p>
                   </div>
                   <div>
                     <button>Remove</button>

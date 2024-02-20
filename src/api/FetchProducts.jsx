@@ -2,11 +2,17 @@ import { useState, useEffect } from "react";
 import ProductsPage from "../components/ProductsPage";
 import HeaderProductsPage from "../components/HeaderProductsPage";
 import styles from "./FetchProducts.module.css";
+import { useOutletContext } from "react-router-dom";
 
 const FetchProducts = () => {
   const [products, setProducts] = useState([]);
   const [error, setError] = useState(null);
   const [loading, setLoading] = useState(true);
+  const [productsToCart, setProductsToCart] = useOutletContext();
+
+  function addProductsToCart(product) {
+    setProductsToCart([...productsToCart, product]);
+  }
 
   useEffect(() => {
     fetch("https://fakestoreapi.com/products", { mode: "cors" })
@@ -37,6 +43,7 @@ const FetchProducts = () => {
             productPrice={product.price}
             productRating={product.rating.rate}
             productCount={product.rating.count}
+            onClick={() => addProductsToCart(product)}
           />
         ))}
       </div>

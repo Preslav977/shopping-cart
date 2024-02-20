@@ -7,11 +7,12 @@ function ProductsPage({
   productPrice,
   productRating,
   productCount,
+  onClick,
 }) {
   return (
     <main className={styles.mainContainer}>
-      <div data-testid="container" className={styles.productsContainer}>
-        <div className={styles.productsContent}>
+      <div className={styles.productsContainer}>
+        <div data-testid="container" className={styles.productsContent}>
           <div className={styles.productsImgContainer}>
             <img className={styles.productsImg} src={productImgSrc} alt="" />
           </div>
@@ -36,7 +37,7 @@ function ProductsPage({
             </button>
           </div>
           <div className={styles.addToCartBtn}>
-            <button>Add to Cart</button>
+            <button onClick={onClick}>Add to Cart</button>
           </div>
         </div>
       </div>
@@ -50,6 +51,7 @@ ProductsPage.propTypes = {
   productPrice: PropTypes.number,
   productRating: PropTypes.number,
   productCount: PropTypes.number,
+  onClick: PropTypes.func,
 };
 
 export default ProductsPage;

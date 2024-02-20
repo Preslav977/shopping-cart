@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import ProductsPage from "../components/ProductsPage";
+import HeaderProductsPage from "../components/HeaderProductsPage";
 import styles from "./FetchProducts.module.css";
 
 const FetchProducts = () => {
@@ -24,32 +25,9 @@ const FetchProducts = () => {
   if (error) return <p>A network error was encountered</p>;
   if (loading) return <p>Loading...</p>;
 
-  console.log(products);
-
   return (
     <>
-      <div className={styles.mainContentHeader}>
-        <h2>Shop</h2>
-        <div className={styles.mainContentSubHeader}>
-          <p>
-            Home <span>&gt;</span>
-          </p>
-          <p>
-            Products <span>&gt;</span>
-          </p>
-          <select
-            className={styles.dropDownMenu}
-            name=""
-            id=""
-            defaultValue="All"
-          >
-            <option value="All">All</option>
-            <option value="Jewelery">Jewelery</option>
-            <option value="Men's Clothing">Men&apos;s Clothing</option>
-            <option value="Women's Clothing">Women&apos;s Clothing</option>
-          </select>
-        </div>
-      </div>
+      <HeaderProductsPage />
       <div className={styles.productsContainer}>
         {products.map((product) => (
           <ProductsPage

@@ -27,8 +27,6 @@ describe("testing the FetchProducts API", () => {
       />,
     );
 
-    screen.debug();
-
     expect(
       screen.queryByText("Mens Casual Premium Slim Fit T-Shirts").textContent,
     ).toMatch(/mens casual premium slim fit t-shirts/i);

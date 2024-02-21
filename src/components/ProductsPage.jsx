@@ -36,7 +36,7 @@ function ProductsPage({
               <span>-</span>
             </button>
           </div>
-          <div className={styles.addToCartBtn}>
+          <div data-testid="add-to-cart" className={styles.addToCartBtn}>
             <button onClick={onClick}>Add to Cart</button>
           </div>
         </div>

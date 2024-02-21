@@ -6,6 +6,7 @@ import App from "../App";
 import Homepage from "../components/Homepage";
 import ProductsPage from "../components/ProductsPage";
 import FetchProducts from "../api/FetchProducts";
+import { UserEvent } from "@testing-library/user-event";
 
 describe("CartPage component", () => {
   it("should render empty cart page if products are not added", () => {
@@ -72,7 +73,7 @@ describe("CartPage component", () => {
     expect(screen.getByTestId("cart")).toBeInTheDocument();
   });
 
-  it("should add the product to the cart and render it", async () => {
+  it("should able to render a product in the cart", async () => {
     const routes = [
       {
         path: "/",
@@ -89,7 +90,18 @@ describe("CartPage component", () => {
 
     render(<RouterProvider router={router} />);
 
-    // screen.debug();
+    render(
+      <ProductsPage
+        productName="Mens Casual Premium Slim Fit T-Shirts"
+        productPrice={22.3}
+        productRating={4.1}
+        productCount={259}
+      />,
+    );
+  });
+
+  it("should able to add a product to the cart and render it", async () => {
+    const user = userEvent.setup();
 
     render(
       <ProductsPage
@@ -99,5 +111,57 @@ describe("CartPage component", () => {
         productCount={259}
       />,
     );
+
+    const addToCartBtn = screen.getByRole("button", { name: "Add to Cart" });
+
+    await user.click(addToCartBtn);
+
+    expect(
+      screen.queryByText("Mens Casual Premium Slim Fit T-Shirts").textContent,
+    ).toMatch(/mens casual premium slim fit t-shirts/i);
+  });
+
+  it("the cart should be empty, when the product is removed", async () => {
+    const user = userEvent.setup();
+
+    const routes = [
+      {
+        path: "/",
+        element: <App />,
+        children: [
+          { index: true, element: <Homepage /> },
+          { path: "/products", element: <FetchProducts /> },
+          { path: "/products/cart", element: <CartPage /> },
+        ],
+      },
+    ];
+
+    const router = createMemoryRouter(routes, {
+      initialEntries: ["/", "/products", "/products/cart"],
+      initialIndex: 2,
+    });
+
+    render(<RouterProvider router={router} />);
+
+    render(
+      <ProductsPage
+        productName="Mens Casual Premium Slim Fit T-Shirts"
+        productPrice={22.3}
+        productRating={4.1}
+        productCount={259}
+      />,
+    );
+
+    const removeProductBtn = screen.queryByTestId("remove-product-btn");
+
+    await user.click(removeProductBtn);
+
+    expect(screen.queryByText("Your cart is empty !").textContent).toMatch(
+      /your cart is empty !/i,
+    );
+
+    expect(
+      screen.queryByText("Click the button to start shopping !").textContent,
+    ).toMatch(/click the button to start shopping !/i);
   });
 });

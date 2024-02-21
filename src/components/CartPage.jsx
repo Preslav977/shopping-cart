@@ -63,6 +63,7 @@ function CartPage() {
                   </div>
                   <div>
                     <button
+                      data-testid="remove-product-btn"
                       onClick={() =>
                         setProductsToCart(
                           productsToCart.filter((a) => a.id !== product.id),

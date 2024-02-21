@@ -5,6 +5,7 @@ import App from "../App";
 import Homepage from "../components/Homepage";
 import CartPage from "../components/CartPage";
 import userEvent from "@testing-library/user-event";
+import FetchProducts from "../api/FetchProducts";
 
 describe("NavBar component with Link elements", () => {
   it("should render the component correctly and get the textContent", () => {
@@ -33,6 +34,7 @@ describe("NavBar component with Link elements", () => {
         element: <App />,
         children: [
           { index: true, element: <Homepage /> },
+          { path: "/products", element: <FetchProducts /> },
           { path: "/products/cart", element: <CartPage /> },
         ],
       },

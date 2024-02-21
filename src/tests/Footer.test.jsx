@@ -5,6 +5,7 @@ import App from "../App";
 import Homepage from "../components/Homepage";
 import CartPage from "../components/CartPage";
 import userEvent from "@testing-library/user-event";
+import FetchProducts from "../api/FetchProducts";
 
 describe("Footer component with Links elements and other elements textContents", () => {
   it("should render the component correctly and get the textContents", () => {
@@ -55,6 +56,7 @@ describe("Footer component with Links elements and other elements textContents",
         element: <App />,
         children: [
           { index: true, element: <Homepage /> },
+          { path: "/products", element: <FetchProducts /> },
           { path: "/products/cart", element: <CartPage /> },
         ],
       },

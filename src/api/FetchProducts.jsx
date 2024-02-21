@@ -10,9 +10,11 @@ const FetchProducts = () => {
   const [loading, setLoading] = useState(true);
   const [productsToCart, setProductsToCart] = useOutletContext();
 
-  function addProductsToCart(product) {
-    setProductsToCart([...productsToCart, product]);
-  }
+  console.log(productsToCart);
+
+  // function addProductsToCart(product) {
+  //   setProductsToCart([...productsToCart, product]);
+  // }
 
   useEffect(() => {
     fetch("https://fakestoreapi.com/products", { mode: "cors" })

@@ -2,15 +2,6 @@ import { Link } from "react-router-dom";
 import styles from "./CartPage.module.css";
 import { useOutletContext } from "react-router-dom";
 
-//click add to cart in order to show it to the cart
-//useState which is an empty array, create copy of the products state
-//which i haven't figured out yet, what state to use maybe the one
-//which gets the API data ?
-//if the cart is not empty show the product (img, title, description, input, price)
-//and estimated total value and a button to proceed to checkut
-//remove it form the cart and show home page maybe
-//if the cart is empty show a message that it is ?
-
 function CartPage() {
   const [productsToCart, setProductsToCart] = useOutletContext();
 
@@ -71,7 +62,15 @@ function CartPage() {
                     <p>{product.price}$</p>
                   </div>
                   <div>
-                    <button>Remove</button>
+                    <button
+                      onClick={() =>
+                        setProductsToCart(
+                          productsToCart.filter((a) => a.id !== product.id),
+                        )
+                      }
+                    >
+                      Remove
+                    </button>
                   </div>
                 </div>
               </div>

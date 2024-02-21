@@ -4,17 +4,27 @@ import CartPage from "../components/CartPage";
 import { createMemoryRouter, RouterProvider } from "react-router-dom";
 import App from "../App";
 import Homepage from "../components/Homepage";
+import ProductsPage from "../components/ProductsPage";
+import FetchProducts from "../api/FetchProducts";
 
 describe("CartPage component", () => {
   it("should render empty cart page if products are not added", () => {
     const routes = [
       {
         path: "/",
-        element: <CartPage />,
+        element: <App />,
+        children: [
+          { index: true, element: <Homepage /> },
+          { path: "/products", element: <FetchProducts /> },
+          { path: "/products/cart", element: <CartPage /> },
+        ],
       },
     ];
 
-    const router = createMemoryRouter(routes, {});
+    const router = createMemoryRouter(routes, {
+      initialEntries: ["/", "/products", "/products/cart"],
+      initialIndex: 2,
+    });
 
     render(<RouterProvider router={router} />);
 
@@ -34,6 +44,7 @@ describe("CartPage component", () => {
         element: <App />,
         children: [
           { index: true, element: <Homepage /> },
+          { path: "/products", element: <FetchProducts /> },
           { path: "/products/cart", element: <CartPage /> },
         ],
       },
@@ -59,5 +70,34 @@ describe("CartPage component", () => {
     expect(screen.getByTestId("about")).toBeInTheDocument();
 
     expect(screen.getByTestId("cart")).toBeInTheDocument();
+  });
+
+  it("should add the product to the cart and render it", async () => {
+    const routes = [
+      {
+        path: "/",
+        element: <App />,
+        children: [
+          { index: true, element: <Homepage /> },
+          { path: "/products", element: <FetchProducts /> },
+          { path: "/products/cart", element: <CartPage /> },
+        ],
+      },
+    ];
+
+    const router = createMemoryRouter(routes, {});
+
+    render(<RouterProvider router={router} />);
+
+    // screen.debug();
+
+    render(
+      <ProductsPage
+        productName="Mens Casual Premium Slim Fit T-Shirts"
+        productPrice={22.3}
+        productRating={4.1}
+        productCount={259}
+      />,
+    );
   });
 });

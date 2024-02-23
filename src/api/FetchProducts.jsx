@@ -8,11 +8,22 @@ const FetchProducts = () => {
   const [products, setProducts] = useState([]);
   const [error, setError] = useState(null);
   const [loading, setLoading] = useState(true);
-  const [productsToCart, setProductsToCart] = useOutletContext();
+  const [
+    productsToCart,
+    setProductsToCart,
+    productsQuantity,
+    setProductsQuantity,
+  ] = useOutletContext();
+
+  const [toggle, setToggle] = useState(true);
 
   function addProductsToCart(product) {
     setProductsToCart([...productsToCart, product]);
   }
+
+  // function increaseProductQuantity() {
+  //   setProductsQuantity((productsQuantity) => productsQuantity + 1);
+  // }
 
   useEffect(() => {
     fetch("https://fakestoreapi.com/products", { mode: "cors" })
@@ -46,7 +57,9 @@ const FetchProducts = () => {
             productPrice={product.price}
             productRating={product.rating.rate}
             productCount={product.rating.count}
+            productQuantity={productsQuantity}
             onClick={() => addProductsToCart(product)}
+            // onClick={increseProductQuantity}
           />
         ))}
       </div>

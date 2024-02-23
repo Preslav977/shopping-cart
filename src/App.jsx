@@ -9,6 +9,8 @@ import React from "react";
 function App() {
   const [productsToCart, setProductsToCart] = React.useState([]);
 
+  const [productsQuantity, setProductsQuantity] = React.useState(1);
+
   const amountOfProductsInCart = productsToCart.filter(
     (product) => product,
   ).length;
@@ -19,7 +21,14 @@ function App() {
         <p>{amountOfProductsInCart}</p>
       </div>
       <NavBar />
-      <Outlet context={[productsToCart, setProductsToCart]} />
+      <Outlet
+        context={[
+          productsToCart,
+          setProductsToCart,
+          productsQuantity,
+          setProductsQuantity,
+        ]}
+      />
       <Footer />
     </>
   );

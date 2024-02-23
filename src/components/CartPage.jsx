@@ -3,7 +3,12 @@ import styles from "./CartPage.module.css";
 import { useOutletContext } from "react-router-dom";
 
 function CartPage() {
-  const [productsToCart, setProductsToCart] = useOutletContext();
+  const [
+    productsToCart,
+    setProductsToCart,
+    productQuantity,
+    setProductQuantity,
+  ] = useOutletContext();
 
   if (productsToCart.length === 0) {
     return (
@@ -45,7 +50,7 @@ function CartPage() {
                   </div>
                   <div className={styles.productQuantityContainer}>
                     <button className={styles.buttonIncrementQuantity}>
-                      <span>+</span>
+                      <span>-</span>
                     </button>
                     <input
                       className={styles.productQuantity}
@@ -53,9 +58,10 @@ function CartPage() {
                       name=""
                       id=""
                       min={1}
+                      value={productQuantity}
                     />
                     <button className={styles.buttonDecrementQuantity}>
-                      <span>-</span>
+                      <span>+</span>
                     </button>
                   </div>
                   <div>

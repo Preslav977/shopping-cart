@@ -39,3 +39,7 @@ input {
   align-items: center;
   justify-content: center;
 }
+
+.addToCartBtn {
+  margin-top: 10px;
+}

@@ -6,16 +6,36 @@ import { useOutletContext } from "react-router-dom";
 
 const FetchProducts = () => {
   const [products, setProducts] = useState([]);
+  products.map((product) => (product.quantity = 1));
   const [error, setError] = useState(null);
   const [loading, setLoading] = useState(true);
   const [productsToCart, setProductsToCart] = useOutletContext();
 
   //added quantity property to all products
   //so it would be easier to update the property of each product
-  products.forEach((product) => (product.quantity = 1));
 
   function addProductsToCart(product) {
     setProductsToCart([...productsToCart, product]);
+  }
+
+  function addQuantityPropertyToProducts() {
+    // products.map((product) => (product.quantity = 1));
+  }
+
+  function increaseProductQuantity(product) {
+    setProducts(
+      products.map((productObj) => {
+        if (productObj.id === product.id) {
+          return { ...productObj, quantity: productObj.quantity + 1 };
+        } else {
+          return productObj;
+        }
+      }),
+    );
+  }
+
+  function onChange(e) {
+    setProducts(e.target.value);
   }
 
   useEffect(() => {
@@ -50,8 +70,12 @@ const FetchProducts = () => {
             productPrice={product.price}
             productRating={product.rating.rate}
             productCount={product.rating.count}
-            productQuantity={1}
-            onClick={() => addProductsToCart(product)}
+            quantity={product.quantity}
+            onClick={() => {
+              // addQuantityPropertyToProducts();
+              increaseProductQuantity(product);
+            }}
+            onChange={(e) => onChange(e.target.value)}
           />
         ))}
       </div>

@@ -1,7 +1,6 @@
 import styles from "./ProductsPage.module.css";
 import PropTypes from "prop-types";
 import { useState } from "react";
-import { useOutletContext } from "react-router-dom";
 
 function ProductsPage({
   productImgSrc,
@@ -9,12 +8,11 @@ function ProductsPage({
   productPrice,
   productRating,
   productCount,
-  productQuantity,
+  quantity,
   onClick,
+  onChange,
 }) {
   const [toggle, setToggle] = useState(true);
-
-  // const [productsToCart, setProductsToCart] = useOutletContext();
 
   function toggleBtnToInput() {
     setToggle((toggle) => !toggle);
@@ -53,8 +51,17 @@ function ProductsPage({
               <button className={styles.buttonIncrementQuantity}>
                 <span>-</span>
               </button>
-              <input type="number" name="" id="" value={productQuantity} />
-              <button className={styles.buttonIncrementQuantity}>
+              <input
+                type="number"
+                name=""
+                id=""
+                value={quantity}
+                onChange={onChange}
+              />
+              <button
+                onClick={onClick}
+                className={styles.buttonIncrementQuantity}
+              >
                 <span>+</span>
               </button>
             </div>
@@ -72,7 +79,7 @@ ProductsPage.propTypes = {
   productRating: PropTypes.number,
   productCount: PropTypes.number,
   onClick: PropTypes.func,
-  productQuantity: PropTypes.number,
+  // productQuantity: PropTypes.number,
 };
 
 export default ProductsPage;

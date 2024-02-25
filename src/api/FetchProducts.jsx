@@ -12,7 +12,11 @@ const FetchProducts = () => {
   const [productsToCart, setProductsToCart] = useOutletContext();
 
   function addProductsToCart(product) {
-    setProductsToCart([...productsToCart, product]);
+    if (
+      !productsToCart.some((productObject) => productObject.id === product.id)
+    ) {
+      setProductsToCart([...productsToCart, product]);
+    }
   }
 
   function increaseProductQuantity(product) {
@@ -90,7 +94,10 @@ const FetchProducts = () => {
             productRating={product.rating.rate}
             productCount={product.rating.count}
             productQuantity={product.quantity}
-            onClick={() => addProductsToCart(product)}
+            onClick={() => {
+              addProductsToCart(product);
+              increaseProductQuantity(product);
+            }}
           />
         ))}
       </div>

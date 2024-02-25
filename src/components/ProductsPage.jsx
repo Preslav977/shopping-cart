@@ -51,7 +51,10 @@ function ProductsPage({
                 <span>-</span>
               </button>
               <input type="number" name="" id="" value={productQuantity} />
-              <button className={styles.buttonIncrementQuantity}>
+              <button
+                onClick={onClick}
+                className={styles.buttonIncrementQuantity}
+              >
                 <span>+</span>
               </button>
             </div>

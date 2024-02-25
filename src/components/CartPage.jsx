@@ -5,6 +5,15 @@ import { useOutletContext } from "react-router-dom";
 function CartPage() {
   const [productsToCart, setProductsToCart] = useOutletContext();
 
+  const allProductsQuantities = productsToCart.map(
+    (product) => product.quantity,
+  );
+
+  const calculateAllProductsQuantities = allProductsQuantities.reduce(
+    (a, b) => a + b,
+    0,
+  );
+
   if (productsToCart.length === 0) {
     return (
       <div className={styles.emptyCartContainer}>
@@ -37,11 +46,7 @@ function CartPage() {
   function decreaseProductQuantity(product) {
     setProductsToCart(
       productsToCart.map((productObj) => {
-        if (
-          productObj.id === product.id &&
-          product.quantity &&
-          product.quantity !== 1
-        ) {
+        if (productObj.id === product.id) {
           return { ...productObj, quantity: productObj.quantity - 1 };
         } else {
           return productObj;
@@ -56,7 +61,9 @@ function CartPage() {
         <div className={styles.productCartSubWrapper}>
           <div className={styles.productsCartContainer}>
             <p>Your shopping Cart</p>
-            <p>1 item</p>
+            <p data-testid="product-items">
+              {calculateAllProductsQuantities} items
+            </p>
           </div>
           <div className={styles.productsContent}>
             {productsToCart.map((product) => (
@@ -72,6 +79,7 @@ function CartPage() {
                   </div>
                   <div className={styles.productQuantityContainer}>
                     <button
+                      data-testid="decrease-quantity"
                       onClick={() => decreaseProductQuantity(product)}
                       className={styles.buttonIncrementQuantity}
                     >
@@ -79,12 +87,15 @@ function CartPage() {
                     </button>
                     <input
                       className={styles.productQuantity}
+                      data-testid="product-quantity"
                       type="number"
                       name=""
                       id=""
                       value={product.quantity}
+                      onChange={() => console.log()}
                     />
                     <button
+                      data-testid="increase-quantity"
                       onClick={() => increaseProductQuantity(product)}
                       className={styles.buttonDecrementQuantity}
                     >

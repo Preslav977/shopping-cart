@@ -12,6 +12,7 @@ function ProductsPage({
   onClick,
   increaseQuantity,
   decreaseQuantity,
+  onChange,
 }) {
   const [toggle, setToggle] = useState(true);
 
@@ -55,7 +56,13 @@ function ProductsPage({
               >
                 <span>-</span>
               </button>
-              <input type="number" name="" id="" value={productQuantity} />
+              <input
+                type="number"
+                name=""
+                id=""
+                value={productQuantity}
+                onChange={onChange}
+              />
               <button
                 onClick={increaseQuantity}
                 className={styles.buttonIncrementQuantity}
@@ -80,6 +87,7 @@ ProductsPage.propTypes = {
   productQuantity: PropTypes.number,
   increaseQuantity: PropTypes.func,
   decreaseQuantity: PropTypes.func,
+  onChange: PropTypes.func,
 };
 
 export default ProductsPage;

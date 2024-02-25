@@ -111,6 +111,7 @@ const FetchProducts = () => {
             onClick={() => addProductsToCart(product)}
             increaseQuantity={() => increaseProductQuantity(product)}
             decreaseQuantity={() => decreaseProductQuantity(product)}
+            onChange={() => console.log()}
           />
         ))}
       </div>

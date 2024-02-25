@@ -78,6 +78,8 @@ ProductsPage.propTypes = {
   productCount: PropTypes.number,
   onClick: PropTypes.func,
   productQuantity: PropTypes.number,
+  increaseQuantity: PropTypes.func,
+  decreaseQuantity: PropTypes.func,
 };
 
 export default ProductsPage;

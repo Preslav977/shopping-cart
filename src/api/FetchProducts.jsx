@@ -6,7 +6,6 @@ import { useOutletContext } from "react-router-dom";
 
 const FetchProducts = () => {
   const [products, setProducts] = useState([]);
-
   const [error, setError] = useState(null);
   const [loading, setLoading] = useState(true);
   const [productsToCart, setProductsToCart] = useOutletContext();
@@ -28,37 +27,37 @@ const FetchProducts = () => {
         return productObj;
       }),
     );
+
+    setProductsToCart(
+      productsToCart.map((productObj) => {
+        if (productObj.id === product.id) {
+          return { ...productObj, quantity: productObj.quantity + 1 };
+        }
+        return productObj;
+      }),
+    );
   }
 
   function decreaseProductQuantity(product) {
     setProducts(
       products.map((productObj) => {
-        if (
-          productObj.id === product.id &&
-          product.quantity &&
-          product.quantity !== 1
-        ) {
+        if (productObj.id === product.id) {
           return { ...productObj, quantity: productObj.quantity - 1 };
         } else {
           return productObj;
         }
       }),
     );
+
+    setProductsToCart(
+      productsToCart.map((productObj) => {
+        if (productObj.id === product.id) {
+          return { ...productObj, quantity: productObj.quantity - 1 };
+        }
+        return productObj;
+      }),
+    );
   }
-
-  // useEffect(() => {
-  //   fetch("https://fakestoreapi.com/products", { mode: "cors" })
-  //     .then((response) => {
-  //       if (response.status >= 400) {
-  //         throw new Error("server error");
-  //       }
-  //       return response.json();
-  //     })
-
-  //     .then((response) => setProducts(response))
-  //     .catch((error) => setError(error))
-  //     .finally(() => setLoading(false));
-  // }, []);
 
   const url = "https://fakestoreapi.com/products";
 

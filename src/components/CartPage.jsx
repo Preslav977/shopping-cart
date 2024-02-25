@@ -23,6 +23,33 @@ function CartPage() {
     );
   }
 
+  function increaseProductQuantity(product) {
+    setProductsToCart(
+      productsToCart.map((productObj) => {
+        if (productObj.id === product.id) {
+          return { ...productObj, quantity: productObj.quantity + 1 };
+        }
+        return productObj;
+      }),
+    );
+  }
+
+  function decreaseProductQuantity(product) {
+    setProductsToCart(
+      productsToCart.map((productObj) => {
+        if (
+          productObj.id === product.id &&
+          product.quantity &&
+          product.quantity !== 1
+        ) {
+          return { ...productObj, quantity: productObj.quantity - 1 };
+        } else {
+          return productObj;
+        }
+      }),
+    );
+  }
+
   return (
     <>
       <div className={styles.productsCartWrapper}>
@@ -44,7 +71,10 @@ function CartPage() {
                     />
                   </div>
                   <div className={styles.productQuantityContainer}>
-                    <button className={styles.buttonIncrementQuantity}>
+                    <button
+                      onClick={() => decreaseProductQuantity(product)}
+                      className={styles.buttonIncrementQuantity}
+                    >
                       <span>-</span>
                     </button>
                     <input
@@ -52,10 +82,12 @@ function CartPage() {
                       type="number"
                       name=""
                       id=""
-                      min={1}
                       value={product.quantity}
                     />
-                    <button className={styles.buttonDecrementQuantity}>
+                    <button
+                      onClick={() => increaseProductQuantity(product)}
+                      className={styles.buttonDecrementQuantity}
+                    >
                       <span>+</span>
                     </button>
                   </div>

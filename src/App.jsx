@@ -9,8 +9,6 @@ import React from "react";
 function App() {
   const [productsToCart, setProductsToCart] = React.useState([]);
 
-  const [products, setProducts] = React.useState([]);
-
   const amountOfProductsInCart = productsToCart.filter(
     (product) => product,
   ).length;

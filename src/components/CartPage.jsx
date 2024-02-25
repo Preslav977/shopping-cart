@@ -3,12 +3,7 @@ import styles from "./CartPage.module.css";
 import { useOutletContext } from "react-router-dom";
 
 function CartPage() {
-  const [
-    productsToCart,
-    setProductsToCart,
-    productQuantity,
-    setProductQuantity,
-  ] = useOutletContext();
+  const [productsToCart, setProductsToCart] = useOutletContext();
 
   if (productsToCart.length === 0) {
     return (
@@ -58,7 +53,7 @@ function CartPage() {
                       name=""
                       id=""
                       min={1}
-                      value={productQuantity}
+                      value={product.quantity}
                     />
                     <button className={styles.buttonDecrementQuantity}>
                       <span>+</span>

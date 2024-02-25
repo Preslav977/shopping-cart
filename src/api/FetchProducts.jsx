@@ -24,6 +24,21 @@ const FetchProducts = () => {
       products.map((productObj) => {
         if (productObj.id === product.id) {
           return { ...productObj, quantity: productObj.quantity + 1 };
+        }
+        return productObj;
+      }),
+    );
+  }
+
+  function decreaseProductQuantity(product) {
+    setProducts(
+      products.map((productObj) => {
+        if (
+          productObj.id === product.id &&
+          product.quantity &&
+          product.quantity !== 1
+        ) {
+          return { ...productObj, quantity: productObj.quantity - 1 };
         } else {
           return productObj;
         }
@@ -94,10 +109,9 @@ const FetchProducts = () => {
             productRating={product.rating.rate}
             productCount={product.rating.count}
             productQuantity={product.quantity}
-            onClick={() => {
-              addProductsToCart(product);
-              increaseProductQuantity(product);
-            }}
+            onClick={() => addProductsToCart(product)}
+            increaseQuantity={() => increaseProductQuantity(product)}
+            decreaseQuantity={() => decreaseProductQuantity(product)}
           />
         ))}
       </div>

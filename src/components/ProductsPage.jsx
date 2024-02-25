@@ -10,6 +10,8 @@ function ProductsPage({
   productCount,
   productQuantity,
   onClick,
+  increaseQuantity,
+  decreaseQuantity,
 }) {
   const [toggle, setToggle] = useState(true);
 
@@ -39,7 +41,7 @@ function ProductsPage({
             <div data-testid="add-to-cart" className={styles.addToCartBtn}>
               <button
                 onClick={() => {
-                  onClick(onClick), toggleBtnToInput();
+                  onClick(), toggleBtnToInput();
                 }}
               >
                 Add to Cart
@@ -47,12 +49,15 @@ function ProductsPage({
             </div>
           ) : (
             <div className={styles.productQuantityContainer}>
-              <button className={styles.buttonIncrementQuantity}>
+              <button
+                onClick={decreaseQuantity}
+                className={styles.buttonIncrementQuantity}
+              >
                 <span>-</span>
               </button>
               <input type="number" name="" id="" value={productQuantity} />
               <button
-                onClick={onClick}
+                onClick={increaseQuantity}
                 className={styles.buttonIncrementQuantity}
               >
                 <span>+</span>

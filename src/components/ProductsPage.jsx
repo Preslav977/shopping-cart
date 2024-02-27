@@ -39,8 +39,9 @@ function ProductsPage({
             </div>
           </div>
           {toggle ? (
-            <div data-testid="add-to-cart" className={styles.addToCartBtn}>
+            <div className={styles.addToCartBtn}>
               <button
+                data-testid="add-to-cart"
                 onClick={() => {
                   onClick(), toggleBtnToInput();
                 }}

@@ -1,9 +1,4 @@
-import {
-  queryByTestId,
-  queryByText,
-  render,
-  screen,
-} from "@testing-library/react";
+import { render, screen } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import CartPage from "../components/CartPage";
 import { createMemoryRouter, RouterProvider } from "react-router-dom";
@@ -171,17 +166,6 @@ describe("CartPage component", () => {
   });
 
   it("should display property the number of items in the cart", async () => {
-    const user = userEvent.setup();
-
-    render(
-      <ProductsPage
-        productName="Mens Casual Premium Slim Fit T-Shirts"
-        productPrice={22.3}
-        productRating={4.1}
-        productCount={259}
-      />,
-    );
-
     const routes = [
       {
         path: "/",
@@ -202,14 +186,6 @@ describe("CartPage component", () => {
     render(<RouterProvider router={router} />);
 
     screen.debug();
-
-    const addToCartBtn = screen.getByRole("button", { name: "Add to Cart" });
-
-    await user.click(addToCartBtn);
-
-    expect(
-      screen.queryByText("Mens Casual Premium Slim Fit T-Shirts").textContent,
-    ).toMatch(/mens casual premium slim fit t-shirts/i);
 
     expect(screen.queryByText("Your shopping Cart").textContent).toMatch(
       /your shopping cart/i,

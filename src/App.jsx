@@ -16,7 +16,7 @@ function App() {
   return (
     <>
       <div className="cartItemsAmount">
-        <p>{amountOfProductsInCart}</p>
+        <p data-testid="products-amount">{amountOfProductsInCart}</p>
       </div>
       <NavBar />
       <Outlet context={[productsToCart, setProductsToCart]} />

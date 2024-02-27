@@ -125,7 +125,7 @@ function CartPage() {
         <div className={styles.estimatedPriceContainer}>
           <div className={styles.estimatedTotal}>
             <p>Estimated Total</p>
-            <p>22.30 $</p>
+            <p> $</p>
           </div>
           <div className={styles.btnPayContainer}>
             <button>Procced to Checkout </button>

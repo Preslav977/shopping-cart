@@ -7,6 +7,7 @@ import Homepage from "../components/Homepage";
 import ProductsPage from "../components/ProductsPage";
 import FetchProducts from "../api/FetchProducts";
 import { UserEvent } from "@testing-library/user-event";
+import { waitForElementToBeRemoved } from "@testing-library/react";
 
 describe("CartPage component", () => {
   it("should render empty cart page if products are not added", () => {
@@ -166,6 +167,8 @@ describe("CartPage component", () => {
   });
 
   it("should display property the number of items in the cart", async () => {
+    const user = userEvent.setup();
+
     const routes = [
       {
         path: "/",
@@ -187,8 +190,18 @@ describe("CartPage component", () => {
 
     screen.debug();
 
-    expect(screen.queryByText("Your shopping Cart").textContent).toMatch(
-      /your shopping cart/i,
-    );
+    expect(screen.queryByText("Your cart is empty !")).toBeInTheDocument();
+
+    expect(screen.queryByText("Your shopping cart")).toBe(null);
+
+    const addToCartBtn = await screen.findAllByRole("button");
+
+    await user.click(addToCartBtn[0]);
+
+    // expect(screen.queryByText("Your shopping cart")).toBeInTheDocument();
+
+    expect(screen.queryByText("Your cart is empty !")).toBe(null);
+
+    screen.debug();
   });
 });

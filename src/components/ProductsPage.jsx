@@ -43,7 +43,7 @@ function ProductsPage({
               <button
                 data-testid="add-to-cart"
                 onClick={() => {
-                  onClick(), toggleBtnToInput();
+                  onClick, toggleBtnToInput();
                 }}
               >
                 Add to Cart

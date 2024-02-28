@@ -12,7 +12,9 @@ describe("it shoud render the correct number of products in the cart", () => {
       initialIndex: 1,
     });
 
-    render(<RouterProvider router={router}></RouterProvider>);
+    render(<RouterProvider router={router} />);
+
+    screen.debug();
 
     const addToCartBtn = await screen.findAllByRole("button");
 
@@ -21,7 +23,5 @@ describe("it shoud render the correct number of products in the cart", () => {
     await user.click(addToCartBtn[0]);
 
     expect(amountOfProducts.textContent).toEqual("1");
-
-    screen.debug();
   });
 });

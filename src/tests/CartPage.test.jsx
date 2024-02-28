@@ -1,28 +1,11 @@
 import { render, screen } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
-import CartPage from "../components/CartPage";
 import { createMemoryRouter, RouterProvider } from "react-router-dom";
-import App from "../App";
-import Homepage from "../components/Homepage";
 import ProductsPage from "../components/ProductsPage";
-import FetchProducts from "../api/FetchProducts";
-import { UserEvent } from "@testing-library/user-event";
-import { waitForElementToBeRemoved } from "@testing-library/react";
+import routes from "../router/routes";
 
 describe("CartPage component", () => {
   it("should render empty cart page if products are not added", () => {
-    const routes = [
-      {
-        path: "/",
-        element: <App />,
-        children: [
-          { index: true, element: <Homepage /> },
-          { path: "/products", element: <FetchProducts /> },
-          { path: "/products/cart", element: <CartPage /> },
-        ],
-      },
-    ];
-
     const router = createMemoryRouter(routes, {
       initialEntries: ["/", "/products", "/products/cart"],
       initialIndex: 2,
@@ -40,18 +23,6 @@ describe("CartPage component", () => {
   });
 
   it("renders HomePage, when the button is clicked", async () => {
-    const routes = [
-      {
-        path: "/",
-        element: <App />,
-        children: [
-          { index: true, element: <Homepage /> },
-          { path: "/products", element: <FetchProducts /> },
-          { path: "/products/cart", element: <CartPage /> },
-        ],
-      },
-    ];
-
     const router = createMemoryRouter(routes, {
       initialEntries: ["/products/cart", "/"],
       initialIndex: 0,
@@ -75,18 +46,6 @@ describe("CartPage component", () => {
   });
 
   it("should able to render a product in the cart", async () => {
-    const routes = [
-      {
-        path: "/",
-        element: <App />,
-        children: [
-          { index: true, element: <Homepage /> },
-          { path: "/products", element: <FetchProducts /> },
-          { path: "/products/cart", element: <CartPage /> },
-        ],
-      },
-    ];
-
     const router = createMemoryRouter(routes, {});
 
     render(<RouterProvider router={router} />);
@@ -125,18 +84,6 @@ describe("CartPage component", () => {
   it("the cart should be empty, when the product is removed", async () => {
     const user = userEvent.setup();
 
-    const routes = [
-      {
-        path: "/",
-        element: <App />,
-        children: [
-          { index: true, element: <Homepage /> },
-          { path: "/products", element: <FetchProducts /> },
-          { path: "/products/cart", element: <CartPage /> },
-        ],
-      },
-    ];
-
     const router = createMemoryRouter(routes, {
       initialEntries: ["/", "/products", "/products/cart"],
       initialIndex: 2,
@@ -169,18 +116,6 @@ describe("CartPage component", () => {
   it("should display property the number of items in the cart", async () => {
     const user = userEvent.setup();
 
-    const routes = [
-      {
-        path: "/",
-        element: <App />,
-        children: [
-          { index: true, element: <Homepage /> },
-          { path: "/products", element: <FetchProducts /> },
-          { path: "/products/cart", element: <CartPage /> },
-        ],
-      },
-    ];
-
     const router = createMemoryRouter(routes, {
       initialEntries: ["/", "/products", "/products/cart"],
       initialIndex: 2,
@@ -190,18 +125,14 @@ describe("CartPage component", () => {
 
     screen.debug();
 
+    const addToCartBtn = await screen.findAllByRole("button");
+
     expect(screen.queryByText("Your cart is empty !")).toBeInTheDocument();
 
     expect(screen.queryByText("Your shopping cart")).toBe(null);
 
-    const addToCartBtn = await screen.findAllByRole("button");
-
     await user.click(addToCartBtn[0]);
 
-    // expect(screen.queryByText("Your shopping cart")).toBeInTheDocument();
-
     expect(screen.queryByText("Your cart is empty !")).toBe(null);
-
-    screen.debug();
   });
 });

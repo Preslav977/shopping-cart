@@ -1,11 +1,8 @@
 import { render, screen } from "@testing-library/react";
 import NavBar from "../components/NavBar";
 import { RouterProvider, createMemoryRouter } from "react-router-dom";
-import App from "../App";
-import Homepage from "../components/Homepage";
-import CartPage from "../components/CartPage";
 import userEvent from "@testing-library/user-event";
-import FetchProducts from "../api/FetchProducts";
+import routes from "../router/routerPaths";
 
 describe("NavBar component with Link elements", () => {
   it("should render the component correctly and get the textContent", () => {
@@ -28,18 +25,6 @@ describe("NavBar component with Link elements", () => {
   });
 
   it("should go to other pages, when the link is clicked", async () => {
-    const routes = [
-      {
-        path: "/",
-        element: <App />,
-        children: [
-          { index: true, element: <Homepage /> },
-          { path: "/products", element: <FetchProducts /> },
-          { path: "/products/cart", element: <CartPage /> },
-        ],
-      },
-    ];
-
     const router = createMemoryRouter(routes, {
       initialEntries: ["", "/products", "/products/cart"],
       initialIndex: 0,

@@ -41,7 +41,7 @@ const FetchProducts = () => {
   function decreaseProductQuantity(product) {
     setProducts(
       products.map((productObj) => {
-        if (productObj.id === product.id) {
+        if (productObj.id === product.id && product.quantity >= 1) {
           return { ...productObj, quantity: productObj.quantity - 1 };
         } else {
           return productObj;

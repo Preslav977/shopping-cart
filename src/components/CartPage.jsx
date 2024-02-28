@@ -14,6 +14,15 @@ function CartPage() {
     0,
   );
 
+  const multiplyAllProductsQuantityAndPrice = productsToCart.map(
+    (product) => product.quantity * product.price,
+  );
+
+  const calculateTheResultOfMultiplying =
+    multiplyAllProductsQuantityAndPrice.reduce((a, b) => a + b, 0);
+
+  const roundTheResultToTwoNumbers = calculateTheResultOfMultiplying.toFixed(2);
+
   if (productsToCart.length === 0) {
     return (
       <div className={styles.emptyCartContainer}>
@@ -125,7 +134,7 @@ function CartPage() {
         <div className={styles.estimatedPriceContainer}>
           <div className={styles.estimatedTotal}>
             <p>Estimated Total</p>
-            <p>$</p>
+            <p>{roundTheResultToTwoNumbers}$</p>
           </div>
           <div className={styles.btnPayContainer}>
             <button>Procced to Checkout </button>

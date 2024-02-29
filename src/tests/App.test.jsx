@@ -1,7 +1,7 @@
 import { screen, render } from "@testing-library/react";
 import { createMemoryRouter, RouterProvider } from "react-router-dom";
 import userEvent from "@testing-library/user-event";
-import routes from "../router/routerPaths";
+import routes from "../router/routes";
 
 describe("it shoud render the correct number of products in the cart", () => {
   it("the amount of the cart should be one", async () => {

@@ -2,7 +2,7 @@ import { render, screen } from "@testing-library/react";
 import { RouterProvider, createMemoryRouter } from "react-router-dom";
 import Footer from "../components/Footer";
 import userEvent from "@testing-library/user-event";
-import routes from "../router/routerPaths";
+import routes from "../router/routes";
 
 describe("Footer component with Links elements and other elements textContents", () => {
   it("should render the component correctly and get the textContents", () => {

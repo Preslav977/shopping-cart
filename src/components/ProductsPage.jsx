@@ -38,40 +38,37 @@ function ProductsPage({
               <p data-testid="count">{productCount}</p>
             </div>
           </div>
-          {toggle ? (
-            <div className={styles.addToCartBtn}>
-              <button
-                data-testid="add-to-cart"
-                onClick={() => {
-                  onClick(), toggleBtnToInput();
-                }}
-              >
-                Add to Cart
-              </button>
-            </div>
+          <div className={styles.addToCartBtn}>
+            <button data-testid="add-to-cart" onClick={onClick}>
+              Add to Cart
+            </button>
+          </div>
+          <div className={styles.productQuantityContainer}>
+            <button
+              onClick={decreaseQuantity}
+              className={styles.buttonIncrementQuantity}
+            >
+              <span>-</span>
+            </button>
+            <input
+              type="number"
+              name=""
+              id=""
+              value={productQuantity}
+              onChange={onChange}
+            />
+            <button
+              onClick={increaseQuantity}
+              className={styles.buttonIncrementQuantity}
+            >
+              <span>+</span>
+            </button>
+          </div>
+          {/* {toggle ? (
+       
           ) : (
-            <div className={styles.productQuantityContainer}>
-              <button
-                onClick={decreaseQuantity}
-                className={styles.buttonIncrementQuantity}
-              >
-                <span>-</span>
-              </button>
-              <input
-                type="number"
-                name=""
-                id=""
-                value={productQuantity}
-                onChange={onChange}
-              />
-              <button
-                onClick={increaseQuantity}
-                className={styles.buttonIncrementQuantity}
-              >
-                <span>+</span>
-              </button>
-            </div>
-          )}
+  
+          )} */}
         </div>
       </div>
     </main>

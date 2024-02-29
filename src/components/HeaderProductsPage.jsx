@@ -21,6 +21,7 @@ function HeaderProductsPage() {
           <option value="Jewelery">Jewelery</option>
           <option value="Men's Clothing">Men&apos;s Clothing</option>
           <option value="Women's Clothing">Women&apos;s Clothing</option>
+          <option value="Electronics">Electronics</option>
         </select>
       </div>
     </div>

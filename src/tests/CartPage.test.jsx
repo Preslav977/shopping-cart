@@ -1,4 +1,4 @@
-import { render, screen } from "@testing-library/react";
+import { queryByTestId, render, screen } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import { createMemoryRouter, RouterProvider } from "react-router-dom";
 import ProductsPage from "../components/ProductsPage";
@@ -118,21 +118,31 @@ describe("CartPage component", () => {
 
     const router = createMemoryRouter(routes, {
       initialEntries: ["/", "/products", "/products/cart"],
-      initialIndex: 2,
+      initialIndex: 1,
     });
 
     render(<RouterProvider router={router} />);
 
-    screen.debug();
-
     const addToCartBtn = await screen.findAllByRole("button");
 
-    expect(screen.queryByText("Your cart is empty !")).toBeInTheDocument();
-
-    expect(screen.queryByText("Your shopping cart")).toBe(null);
+    const cartIcon = screen.queryByTestId("cart");
 
     await user.click(addToCartBtn[0]);
 
-    expect(screen.queryByText("Your cart is empty !")).toBe(null);
+    await user.click(cartIcon);
+
+    const cartItems = screen.queryByTestId("product-items");
+
+    expect(screen.queryByText("Your cart is empty !")).not.toBeInTheDocument();
+
+    expect(
+      screen.queryByText("Click the button to start shopping !"),
+    ).not.toBeInTheDocument();
+
+    expect(screen.queryByText("Your shopping Cart")).toBeInTheDocument();
+
+    expect(cartItems.textContent).toEqual("1 items");
+
+    screen.debug();
   });
 });

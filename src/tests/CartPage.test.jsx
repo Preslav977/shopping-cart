@@ -1,4 +1,4 @@
-import { queryByTestId, render, screen } from "@testing-library/react";
+import { render, screen } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import { createMemoryRouter, RouterProvider } from "react-router-dom";
 import ProductsPage from "../components/ProductsPage";
@@ -143,6 +143,37 @@ describe("CartPage component", () => {
 
     expect(cartItems.textContent).toEqual("1 items");
 
+    // screen.debug();
+  });
+
+  it("should show increase quantity of a product", async () => {
+    const user = userEvent.setup();
+
+    const router = createMemoryRouter(routes, {
+      initialEntries: ["/", "/products", "/products/cart"],
+      initialIndex: 1,
+    });
+
+    render(<RouterProvider router={router} />);
+
+    const addToCartBtn = await screen.findAllByRole("button");
+
+    const cartIcon = screen.queryByTestId("cart");
+
+    const increaseQuantity = screen.queryAllByTestId("increase-quantity");
+
+    const productQuantity = screen.queryAllByTestId("product-quantity");
+
+    await user.click(addToCartBtn[0]);
+
+    await user.click(increaseQuantity[0]);
+
+    await user.click(increaseQuantity[0]);
+
     screen.debug();
+
+    expect(productQuantity[0].value).toEqual("3");
+
+    await user.click(cartIcon);
   });
 });

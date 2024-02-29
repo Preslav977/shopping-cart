@@ -45,12 +45,14 @@ function ProductsPage({
           </div>
           <div className={styles.productQuantityContainer}>
             <button
+              data-testid="decrease-quantity"
               onClick={decreaseQuantity}
               className={styles.buttonIncrementQuantity}
             >
               <span>-</span>
             </button>
             <input
+              data-testid="product-quantity"
               type="number"
               name=""
               id=""
@@ -58,6 +60,7 @@ function ProductsPage({
               onChange={onChange}
             />
             <button
+              data-testid="increase-quantity"
               onClick={increaseQuantity}
               className={styles.buttonIncrementQuantity}
             >

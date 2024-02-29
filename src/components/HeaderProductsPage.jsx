@@ -4,7 +4,7 @@ function HeaderProductsPage() {
   return (
     <div className={styles.mainContentHeader}>
       <h2>Shop</h2>
-      {/* <div className={styles.mainContentSubHeader}>
+      <div className={styles.mainContentSubHeader}>
         <p>
           Home <span>&gt;</span>
         </p>
@@ -23,7 +23,7 @@ function HeaderProductsPage() {
           <option value="Women's Clothing">Women&apos;s Clothing</option>
           <option value="Electronics">Electronics</option>
         </select>
-      </div> */}
+      </div>
     </div>
   );
 }

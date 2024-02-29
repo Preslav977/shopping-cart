@@ -1,0 +1,21 @@
+.mainContainer {
+  /* outline: 2px solid black; */
+  height: 120vh;
+  display: flex;
+  justify-content: center;
+  /* align-items: center; */
+  margin-top: 40px;
+}
+
+.mainContent {
+  /* outline: 2px solid black; */
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  align-items: center;
+}
+
+.aboutImg {
+  height: 400px;
+  width: 400px;
+}

@@ -176,4 +176,37 @@ describe("CartPage component", () => {
 
     await user.click(cartIcon);
   });
+
+  it("should update the price when the quantity is increased", async () => {
+    const user = userEvent.setup();
+
+    const router = createMemoryRouter(routes, {
+      initialEntries: ["/", "/products", "/products/cart"],
+      initialIndex: 1,
+    });
+
+    render(<RouterProvider router={router} />);
+
+    const addToCartBtn = await screen.findAllByRole("button");
+
+    const cartIcon = screen.queryByTestId("cart");
+
+    const increaseQuantity = screen.queryAllByTestId("increase-quantity");
+
+    const productQuantity = screen.queryAllByTestId("product-quantity");
+
+    await user.click(addToCartBtn[0]);
+
+    await user.click(increaseQuantity[0]);
+
+    expect(productQuantity[0].value).toEqual("2");
+
+    await user.click(cartIcon);
+
+    const productPrice = screen.queryByTestId("total-price");
+
+    expect(productPrice.textContent).toEqual("219.90$");
+
+    screen.debug();
+  });
 });

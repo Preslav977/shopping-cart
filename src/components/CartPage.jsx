@@ -134,10 +134,10 @@ function CartPage() {
         <div className={styles.estimatedPriceContainer}>
           <div className={styles.estimatedTotal}>
             <p>Estimated Total</p>
-            <p>{roundTheResultToTwoNumbers}$</p>
+            <p data-testid="total-price">{roundTheResultToTwoNumbers}$</p>
           </div>
           <div className={styles.btnPayContainer}>
-            <button>Procced to Checkout </button>
+            <button data-testid="checkout-button">Procced to Checkout </button>
           </div>
           <div>
             <img src="" alt="" />

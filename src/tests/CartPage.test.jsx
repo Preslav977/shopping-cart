@@ -4,7 +4,7 @@ import { createMemoryRouter, RouterProvider } from "react-router-dom";
 import ProductsPage from "../components/ProductsPage";
 import routes from "../router/routes";
 
-describe("CartPage component", () => {
+describe("should render CartPage component", () => {
   it("should render empty cart page if products are not added", () => {
     const router = createMemoryRouter(routes, {
       initialEntries: ["/", "/products", "/products/cart"],
@@ -22,7 +22,7 @@ describe("CartPage component", () => {
     ).toMatch(/click the button to start shopping !/i);
   });
 
-  it("renders HomePage, when the button is clicked", async () => {
+  it("should navigate to HomePage", async () => {
     const router = createMemoryRouter(routes, {
       initialEntries: ["/products/cart", "/"],
       initialIndex: 0,
@@ -143,10 +143,14 @@ describe("CartPage component", () => {
 
     expect(cartItems.textContent).toEqual("1 items");
 
+    expect(screen.queryByText("Estimated Total")).toBeInTheDocument();
+
+    expect(screen.queryByTestId("checkout-button")).toBeInTheDocument();
+
     // screen.debug();
   });
 
-  it("should show increase quantity of a product", async () => {
+  it("should render increased quantity of a product", async () => {
     const user = userEvent.setup();
 
     const router = createMemoryRouter(routes, {

@@ -2,7 +2,7 @@ import { render, screen } from "@testing-library/react";
 import { createMemoryRouter, RouterProvider } from "react-router-dom";
 import ProductsPage from "../components/ProductsPage";
 
-describe("testing if the button is rendered in this component", () => {
+describe("should render ProductPage cart component", () => {
   it("it should render a button Add to Cart", () => {
     const routes = [
       {

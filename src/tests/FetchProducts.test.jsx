@@ -8,8 +8,8 @@ import { createMemoryRouter } from "react-router-dom";
 import { RouterProvider } from "react-router-dom";
 import routes from "../router/routes";
 
-describe("testing the FetchProducts API", () => {
-  it("loading test is shown while API request is in progress", async () => {
+describe("should render FetchProducts component", () => {
+  it("should render Loading while the API fetches", async () => {
     const router = createMemoryRouter(routes, {
       initialEntries: ["", "/products", "/products/cart"],
       initialIndex: 1,
@@ -26,7 +26,7 @@ describe("testing the FetchProducts API", () => {
     await waitForElementToBeRemoved(() => screen.getByText("Loading..."));
   });
 
-  it("should display one rendered product on the screen", () => {
+  it("should render one product on the page", () => {
     render(
       <ProductsPage
         productName="Mens Casual Premium Slim Fit T-Shirts"

@@ -41,7 +41,7 @@ const FetchProducts = () => {
   function decreaseProductQuantity(product) {
     setProducts(
       products.map((productObj) => {
-        if (productObj.id === product.id && product.quantity >= 1) {
+        if (productObj.id === product.id && product.quantity !== 1) {
           return { ...productObj, quantity: productObj.quantity - 1 };
         } else {
           return productObj;
@@ -51,10 +51,11 @@ const FetchProducts = () => {
 
     setProductsToCart(
       productsToCart.map((productObj) => {
-        if (productObj.id === product.id) {
+        if (productObj.id === product.id && product.quantity !== 1) {
           return { ...productObj, quantity: productObj.quantity - 1 };
+        } else {
+          return productObj;
         }
-        return productObj;
       }),
     );
   }

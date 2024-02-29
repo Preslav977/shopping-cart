@@ -1,6 +1,5 @@
 import styles from "./ProductsPage.module.css";
 import PropTypes from "prop-types";
-import { useState } from "react";
 
 function ProductsPage({
   productImgSrc,
@@ -14,12 +13,6 @@ function ProductsPage({
   decreaseQuantity,
   onChange,
 }) {
-  const [toggle, setToggle] = useState(true);
-
-  function toggleBtnToInput() {
-    setToggle((toggle) => !toggle);
-  }
-
   return (
     <main className={styles.mainContainer}>
       <div className={styles.productsContainer}>
@@ -67,11 +60,6 @@ function ProductsPage({
               <span>+</span>
             </button>
           </div>
-          {/* {toggle ? (
-       
-          ) : (
-  
-          )} */}
         </div>
       </div>
     </main>

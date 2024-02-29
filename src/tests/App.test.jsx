@@ -3,7 +3,7 @@ import { createMemoryRouter, RouterProvider } from "react-router-dom";
 import userEvent from "@testing-library/user-event";
 import routes from "../router/routes";
 
-describe("it shoud render the correct number of products in the cart", () => {
+describe("it should render one item in the cart", () => {
   it("the amount of the cart should be one", async () => {
     const user = userEvent.setup();
 
@@ -14,7 +14,7 @@ describe("it shoud render the correct number of products in the cart", () => {
 
     render(<RouterProvider router={router} />);
 
-    screen.debug();
+    // screen.debug();
 
     const addToCartBtn = await screen.findAllByRole("button");
 

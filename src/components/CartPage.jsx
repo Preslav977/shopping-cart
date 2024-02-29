@@ -55,7 +55,7 @@ function CartPage() {
   function decreaseProductQuantity(product) {
     setProductsToCart(
       productsToCart.map((productObj) => {
-        if (productObj.id === product.id) {
+        if (productObj.id === product.id && product.quantity !== 1) {
           return { ...productObj, quantity: productObj.quantity - 1 };
         } else {
           return productObj;

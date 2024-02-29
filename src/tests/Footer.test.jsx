@@ -4,7 +4,7 @@ import Footer from "../components/Footer";
 import userEvent from "@testing-library/user-event";
 import routes from "../router/routes";
 
-describe("Footer component with Links elements and other elements textContents", () => {
+describe("should render Footer component with Links", () => {
   it("should render the component correctly and get the textContents", () => {
     const routes = [
       {
@@ -46,7 +46,7 @@ describe("Footer component with Links elements and other elements textContents",
     expect(screen.queryByText("Email").textContent).toMatch(/email/i);
   });
 
-  it("should go to other pages, when the Link is clicked", async () => {
+  it("should navigate  to HomePage", async () => {
     const router = createMemoryRouter(routes, {
       initialEntries: ["", "/products", "/products/cart"],
       initialIndex: 0,

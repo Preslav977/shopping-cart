@@ -4,8 +4,8 @@ import { RouterProvider, createMemoryRouter } from "react-router-dom";
 import userEvent from "@testing-library/user-event";
 import routes from "../router/routes";
 
-describe("NavBar component with Link elements", () => {
-  it("should render the component correctly and get the textContent", () => {
+describe("should render NavBar component with Links", () => {
+  it("should render NavBar with its content", () => {
     const routes = [
       {
         path: "/",
@@ -24,7 +24,7 @@ describe("NavBar component with Link elements", () => {
     expect(screen.queryByText("About").textContent).toMatch(/about/i);
   });
 
-  it("should go to other pages, when the link is clicked", async () => {
+  it("should navigate to HomePage", async () => {
     const router = createMemoryRouter(routes, {
       initialEntries: ["", "/products", "/products/cart"],
       initialIndex: 0,

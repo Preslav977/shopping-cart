@@ -3,8 +3,8 @@ import { RouterProvider, createMemoryRouter } from "react-router-dom";
 
 import Homepage from "../components/Homepage";
 
-describe("Homepage component with Link element and other elements", () => {
-  it("should render the componen correctly and get the textContents", () => {
+describe("should render HomePage component", () => {
+  it("should render HomePage content", () => {
     const routes = [
       {
         path: "/",
@@ -44,7 +44,7 @@ describe("Homepage component with Link element and other elements", () => {
 
     const router = createMemoryRouter(routes, {});
 
-    render(<RouterProvider router={router}></RouterProvider>);
+    render(<RouterProvider router={router} />);
 
     const button = screen.getByTestId("button");
 

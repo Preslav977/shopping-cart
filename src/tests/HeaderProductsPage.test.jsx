@@ -1,8 +1,8 @@
 import { screen, render } from "@testing-library/react";
 import HeaderProductsPage from "../components/HeaderProductsPage";
 
-describe("should render header section of this component", () => {
-  it("should render the shop heading and the drop-down menu", () => {
+describe("Should render HeaderProductsPage component", () => {
+  it("should render HeaderProductsPage content", () => {
     render(<HeaderProductsPage />);
 
     screen.debug();

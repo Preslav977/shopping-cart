@@ -87,4 +87,33 @@ describe("should render NavBar component with Links", () => {
 
     screen.debug();
   });
+
+  it("should nagivate to CartPage", async () => {
+    const router = createMemoryRouter(routes, {
+      initialEntries: ["", "/products", "/products/cart", "/about"],
+      initialIndex: 0,
+    });
+
+    render(<RouterProvider router={router} />);
+
+    const user = userEvent.setup();
+
+    const cartLink = screen.getByTestId("cart");
+
+    await user.click(cartLink);
+
+    // screen.debug();
+
+    expect(screen.queryByText("Your cart is empty !").textContent).toMatch(
+      /your cart is empty !/i,
+    );
+
+    expect(
+      screen.queryByText("Click the button to start shopping !").textContent,
+    ).toMatch(/click the button to start shopping !/i);
+
+    expect(
+      screen.queryByRole("button", { name: "Shop Now" }),
+    ).toBeInTheDocument();
+  });
 });

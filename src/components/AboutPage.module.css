@@ -4,7 +4,8 @@
   display: flex;
   justify-content: center;
   /* align-items: center; */
-  margin-top: 40px;
+  /* margin-top: 40px; */
+  background-color: #8eb2c0;
 }
 
 .mainContent {

@@ -6,9 +6,17 @@ import { useOutletContext } from "react-router-dom";
 
 const FetchProducts = () => {
   const [products, setProducts] = useState([]);
+  const [filteredProducts, setFilteredProducts] = useState(products);
   const [error, setError] = useState(null);
   const [loading, setLoading] = useState(true);
   const [productsToCart, setProductsToCart] = useOutletContext();
+  const [selectOptions, setSelectOptions] = useState(
+    "All",
+    "Jewelery",
+    "Mens Clothing",
+    "Womens Clothing",
+    "Electronics",
+  );
 
   function addProductsToCart(product) {
     if (
@@ -19,8 +27,8 @@ const FetchProducts = () => {
   }
 
   function increaseProductQuantity(product) {
-    setProducts(
-      products.map((productObj) => {
+    setFilteredProducts(
+      filteredProducts.map((productObj) => {
         if (productObj.id === product.id) {
           return { ...productObj, quantity: productObj.quantity + 1 };
         }
@@ -39,8 +47,8 @@ const FetchProducts = () => {
   }
 
   function decreaseProductQuantity(product) {
-    setProducts(
-      products.map((productObj) => {
+    setFilteredProducts(
+      filteredProducts.map((productObj) => {
         if (productObj.id === product.id && product.quantity !== 1) {
           return { ...productObj, quantity: productObj.quantity - 1 };
         } else {
@@ -58,6 +66,15 @@ const FetchProducts = () => {
         }
       }),
     );
+  }
+
+  function filterProductsByCategory(e) {
+    const event = e.target.value;
+    console.log(event);
+    const filterProducts = products.filter((obj) =>
+      obj.category.includes(event),
+    );
+    setFilteredProducts(filterProducts);
   }
 
   const url = "https://fakestoreapi.com/products";
@@ -79,6 +96,7 @@ const FetchProducts = () => {
       });
 
       setProducts(allProducts);
+      setFilteredProducts(allProducts);
     } catch (error) {
       console.log(error);
     }
@@ -95,12 +113,18 @@ const FetchProducts = () => {
 
   return (
     <>
-      <HeaderProductsPage />
+      <HeaderProductsPage
+        value={selectOptions}
+        onChange={(e) => {
+          setSelectOptions(e.target.value);
+          filterProductsByCategory(e);
+        }}
+      />
       <div
         data-test-id="products-container"
         className={styles.productsContainer}
       >
-        {products.map((product) => (
+        {filteredProducts.map((product) => (
           <ProductsPage
             key={product.id}
             productImgSrc={product.image}

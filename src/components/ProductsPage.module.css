@@ -5,10 +5,11 @@
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  background-color: white;
 }
 
 .productsImg {
-  height: 140px;
+  height: 150px;
   margin-bottom: 10px;
 }
 

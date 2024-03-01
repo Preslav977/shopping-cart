@@ -17,6 +17,7 @@
   outline: 2px solid black;
   display: flex;
   align-items: center;
+  justify-content: center;
 }
 
 span {
@@ -28,4 +29,12 @@ span {
 p:nth-child(2) {
   margin-left: 5px;
   margin-right: 5px;
+}
+
+.mainContentHeader {
+  background-color: #f3f6f0;
+}
+
+h2 {
+  text-align: center;
 }

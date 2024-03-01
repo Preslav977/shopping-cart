@@ -17,6 +17,7 @@ li {
 .navbarContainer {
   outline: 2px solid black;
   padding: 20px;
+  background-color: #f3f6f0;
 }
 
 .storeLogo {

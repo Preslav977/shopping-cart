@@ -1,6 +1,6 @@
 import styles from "./HeaderProductsPage.module.css";
 
-function HeaderProductsPage() {
+function HeaderProductsPage({ onChange, value }) {
   return (
     <div className={styles.mainContentHeader}>
       <h2>Shop</h2>
@@ -15,13 +15,14 @@ function HeaderProductsPage() {
           className={styles.dropDownMenu}
           name=""
           id=""
-          defaultValue="All"
+          value={value}
+          onChange={onChange}
         >
-          <option value="All">All</option>
-          <option value="Jewelery">Jewelery</option>
-          <option value="Men's Clothing">Men&apos;s Clothing</option>
-          <option value="Women's Clothing">Women&apos;s Clothing</option>
-          <option value="Electronics">Electronics</option>
+          <option value="all">All</option>
+          <option value="jewelery">Jewelery</option>
+          <option value="men's clothing">Men&apos;s Clothing</option>
+          <option value="women's clothing">Women&apos;s Clothing</option>
+          <option value="electronics">Electronics</option>
         </select>
       </div>
     </div>

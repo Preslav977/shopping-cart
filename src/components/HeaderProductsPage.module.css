@@ -10,14 +10,16 @@
 }
 
 .dropDownMenu:hover {
-  background-color: lightblue;
+  background-color: #8eb2c0;
 }
 
 .mainContentSubHeader {
-  outline: 2px solid black;
+  /* outline: 2px solid black; */
   display: flex;
   align-items: center;
-  justify-content: center;
+  /* justify-content: center; */
+  justify-content: flex-start;
+  margin-left: 20px;
 }
 
 span {
@@ -35,6 +37,8 @@ p:nth-child(2) {
   background-color: #f3f6f0;
 }
 
-h2 {
-  text-align: center;
+.shop {
+  /* text-align: center; */
+  margin-left: 20px;
+  margin-top: 5px;
 }

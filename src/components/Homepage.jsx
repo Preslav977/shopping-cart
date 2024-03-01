@@ -14,10 +14,16 @@ function Homepage() {
               available products in the store
             </p>
           </div>
-          <p>Why wait for tomorrow, when you can do this now!</p>
+          <p className={styles.secondRow}>
+            Why wait for tomorrow, when you can do this now!
+          </p>
           <div className={styles.buttonContainer}>
-            <button data-testid="button">
-              <Link to="/products" data-testid="shop-now-btn">
+            <button className={styles.shopNowBtn} data-testid="button">
+              <Link
+                className={styles.shopNowBtn}
+                to="/products"
+                data-testid="shop-now-btn"
+              >
                 Shop Now
               </Link>
             </button>

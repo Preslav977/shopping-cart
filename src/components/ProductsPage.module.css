@@ -15,6 +15,7 @@
 
 .productsDescription {
   text-align: center;
+  padding: 5px;
 }
 
 input {
@@ -31,8 +32,12 @@ input {
 
 .buttonIncrementQuantity,
 .buttonDecrementQuantity {
-  width: 25px;
+  /* width: 25px; */
+  padding: 0 5px 0 5px;
   margin-top: 10px;
+  background-color: #355360;
+  /* border: 0; */
+  color: white;
 }
 
 .productsRatingContainer {
@@ -41,6 +46,34 @@ input {
   justify-content: center;
 }
 
-.addToCartBtn {
+.addToCartBtnContainer {
   margin-top: 10px;
+  /* background-color: #355360; */
+}
+
+.buttonIncrementQuantity {
+  margin-right: 2px;
+}
+
+.addToCartBtn {
+  background-color: #355360;
+  color: #f3f6f0;
+  padding: 6px;
+  border: 0;
+  border-radius: 6px;
+}
+
+.addToCartBtn:hover,
+.buttonDecrementQuantity:hover,
+.buttonIncrementQuantity:hover {
+  cursor: pointer;
+}
+
+.productName {
+  text-wrap: pretty;
+  padding: 2px;
+}
+
+img:hover {
+  cursor: pointer;
 }

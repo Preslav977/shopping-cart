@@ -38,3 +38,23 @@
 .mainContentDesc {
   margin-top: 20px;
 }
+
+.secondRow {
+  margin-top: 10px;
+}
+
+.shopNowBtn {
+  padding: 5px;
+  color: white;
+  background-color: #8a6460;
+  border: 0;
+  border-radius: 2px;
+}
+
+.shopNowBtn:hover {
+  border-bottom: 2px solid white;
+}
+
+.shopNowBtn:active {
+  transform: translateY(5px);
+}

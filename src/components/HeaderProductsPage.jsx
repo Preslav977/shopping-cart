@@ -4,7 +4,7 @@ import PropTypes from "prop-types";
 function HeaderProductsPage({ onChange, value }) {
   return (
     <div className={styles.mainContentHeader}>
-      <h2>Shop</h2>
+      <h2 className={styles.shop}>Shop</h2>
       <div className={styles.mainContentSubHeader}>
         <p>
           Home <span>&gt;</span>

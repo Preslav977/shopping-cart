@@ -21,7 +21,7 @@ function ProductsPage({
             <img className={styles.productsImg} src={productImgSrc} alt="" />
           </div>
           <div className={styles.productsDescription}>
-            <p>{productName}</p>
+            <p className={styles.productName}>{productName}</p>
             <p data-testid="price" className={styles.productPrice}>
               {productPrice}$
             </p>
@@ -31,8 +31,12 @@ function ProductsPage({
               <p data-testid="count">{productCount}</p>
             </div>
           </div>
-          <div className={styles.addToCartBtn}>
-            <button data-testid="add-to-cart" onClick={onClick}>
+          <div className={styles.addToCartBtnContainer}>
+            <button
+              className={styles.addToCartBtn}
+              data-testid="add-to-cart"
+              onClick={onClick}
+            >
               Add to Cart
             </button>
           </div>

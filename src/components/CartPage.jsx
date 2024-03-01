@@ -32,7 +32,9 @@ function CartPage() {
             <p>Click the button to start shopping !</p>
             <div className={styles.btnShopNowContainer}>
               <button data-testid="button" className={styles.btnShopNow}>
-                <Link to="/products">Shop Now</Link>
+                <Link className={styles.btnShopNow} to="/products">
+                  Shop Now
+                </Link>
               </button>
             </div>
           </div>
@@ -116,6 +118,7 @@ function CartPage() {
                   </div>
                   <div>
                     <button
+                      className={styles.removeButton}
                       data-testid="remove-product-btn"
                       onClick={() =>
                         setProductsToCart(
@@ -137,7 +140,12 @@ function CartPage() {
             <p data-testid="total-price">{roundTheResultToTwoNumbers}$</p>
           </div>
           <div className={styles.btnPayContainer}>
-            <button data-testid="checkout-button">Procced to Checkout </button>
+            <button
+              className={styles.proceedToCheckoutBtn}
+              data-testid="checkout-button"
+            >
+              Procced to Checkout{" "}
+            </button>
           </div>
           <div>
             <img src="" alt="" />

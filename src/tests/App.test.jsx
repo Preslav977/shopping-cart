@@ -8,7 +8,7 @@ describe("it should render one item in the cart", () => {
     const user = userEvent.setup();
 
     const router = createMemoryRouter(routes, {
-      initialEntries: ["/", "/products", "/products/cart"],
+      initialEntries: ["/", "/products", "/products/cart", "/about"],
       initialIndex: 1,
     });
 

@@ -26,7 +26,7 @@ describe("should render NavBar component with Links", () => {
 
   it("should navigate to HomePage", async () => {
     const router = createMemoryRouter(routes, {
-      initialEntries: ["", "/products", "/products/cart"],
+      initialEntries: ["", "/products", "/products/cart", "/about"],
       initialIndex: 0,
     });
 
@@ -43,5 +43,48 @@ describe("should render NavBar component with Links", () => {
     expect(screen.getByTestId("cart")).toBeInTheDocument();
 
     expect(screen.getByTestId("about")).toBeInTheDocument();
+  });
+
+  it("should nagivate to ProductPage", async () => {
+    const router = createMemoryRouter(routes, {
+      initialEntries: ["", "/products", "/products/cart", "/about"],
+      initialIndex: 0,
+    });
+
+    render(<RouterProvider router={router} />);
+
+    const user = userEvent.setup();
+
+    const productLink = screen.getByTestId("products");
+
+    await user.click(productLink);
+
+    const product = await screen.findByText(
+      "Fjallraven - Foldsack No. 1 Backpack, Fits 15 Laptops",
+    );
+
+    expect(product).toBeInTheDocument();
+
+    expect(screen.queryByText("Shop")).toBeInTheDocument();
+
+    expect(screen.queryByTestId("products-select")).toBeInTheDocument();
+
+    expect(screen.queryByText("All").textContent).toMatch(/all/i);
+
+    expect(screen.queryByText("Jewelery").textContent).toMatch(/jewelery/i);
+
+    expect(screen.queryByText("Men's Clothing").textContent).toMatch(
+      /men's clothing/i,
+    );
+
+    expect(screen.queryByText("Women's Clothing").textContent).toMatch(
+      /women's clothing/i,
+    );
+
+    expect(screen.queryByText("Electronics").textContent).toMatch(
+      /electronics/i,
+    );
+
+    screen.debug();
   });
 });

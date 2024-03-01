@@ -1,4 +1,5 @@
 import styles from "./HeaderProductsPage.module.css";
+import PropTypes from "prop-types";
 
 function HeaderProductsPage({ onChange, value }) {
   return (
@@ -8,7 +9,7 @@ function HeaderProductsPage({ onChange, value }) {
         <p>
           Home <span>&gt;</span>
         </p>
-        <p>
+        <p data-testid="products-select">
           Products <span>&gt;</span>
         </p>
         <select
@@ -28,5 +29,10 @@ function HeaderProductsPage({ onChange, value }) {
     </div>
   );
 }
+
+HeaderProductsPage.propTypes = {
+  onChange: PropTypes.func,
+  value: PropTypes.string,
+};
 
 export default HeaderProductsPage;

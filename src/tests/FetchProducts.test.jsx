@@ -11,7 +11,7 @@ import routes from "../router/routes";
 describe("should render FetchProducts component", () => {
   it("should render Loading while the API fetches", async () => {
     const router = createMemoryRouter(routes, {
-      initialEntries: ["", "/products", "/products/cart"],
+      initialEntries: ["", "/products", "/products/cart", "/about"],
       initialIndex: 1,
     });
 

@@ -7,7 +7,7 @@ import routes from "../router/routes";
 describe("should render CartPage component", () => {
   it("should render empty cart page if products are not added", () => {
     const router = createMemoryRouter(routes, {
-      initialEntries: ["/", "/products", "/products/cart"],
+      initialEntries: ["/", "/products", "/products/cart", "/about"],
       initialIndex: 2,
     });
 
@@ -45,19 +45,29 @@ describe("should render CartPage component", () => {
     expect(screen.getByTestId("cart")).toBeInTheDocument();
   });
 
-  it("should able to render a product in the cart", async () => {
-    const router = createMemoryRouter(routes, {});
+  it("Should nagivate to ProductsPage, when cart is emtpy", async () => {
+    const user = userEvent.setup();
+
+    const router = createMemoryRouter(routes, {
+      initialEntries: ["/", "/products", "/products/cart", "/about"],
+      initialIndex: 2,
+    });
 
     render(<RouterProvider router={router} />);
 
-    render(
-      <ProductsPage
-        productName="Mens Casual Premium Slim Fit T-Shirts"
-        productPrice={22.3}
-        productRating={4.1}
-        productCount={259}
-      />,
+    expect(screen.queryByText("Your cart is empty !").textContent).toMatch(
+      /your cart is empty !/i,
     );
+
+    expect(
+      screen.queryByText("Click the button to start shopping !").textContent,
+    ).toMatch(/click the button to start shopping !/i);
+
+    const shopNowBtn = screen.queryByTestId("shop-now-btn");
+
+    await user.click(shopNowBtn);
+
+    screen.debug();
   });
 
   it("should able to add a product to the cart and render it", async () => {
@@ -76,33 +86,50 @@ describe("should render CartPage component", () => {
 
     await user.click(addToCartBtn);
 
+    screen.debug();
+
     expect(
       screen.queryByText("Mens Casual Premium Slim Fit T-Shirts").textContent,
     ).toMatch(/mens casual premium slim fit t-shirts/i);
+
+    const productPrice = screen.queryByTestId("price");
+
+    const productRating = screen.queryByTestId("rating");
+
+    const productCount = screen.queryByTestId("count");
+
+    expect(productPrice.textContent).toEqual("22.3$");
+
+    expect(productRating.textContent).toEqual("4.1");
+
+    expect(productCount.textContent).toEqual("259");
   });
 
   it("the cart should be empty, when the product is removed", async () => {
     const user = userEvent.setup();
 
     const router = createMemoryRouter(routes, {
-      initialEntries: ["/", "/products", "/products/cart"],
-      initialIndex: 2,
+      initialEntries: ["/", "/products", "/products/cart", "/about"],
+      initialIndex: 1,
     });
 
     render(<RouterProvider router={router} />);
 
-    render(
-      <ProductsPage
-        productName="Mens Casual Premium Slim Fit T-Shirts"
-        productPrice={22.3}
-        productRating={4.1}
-        productCount={259}
-      />,
-    );
+    const addToCartBtn = await screen.findAllByRole("button");
+
+    const cartIcon = screen.queryByTestId("cart");
+
+    await user.click(addToCartBtn[0]);
+
+    await user.click(cartIcon);
+
+    screen.debug();
 
     const removeProductBtn = screen.queryByTestId("remove-product-btn");
 
     await user.click(removeProductBtn);
+
+    screen.debug();
 
     expect(screen.queryByText("Your cart is empty !").textContent).toMatch(
       /your cart is empty !/i,
@@ -117,7 +144,7 @@ describe("should render CartPage component", () => {
     const user = userEvent.setup();
 
     const router = createMemoryRouter(routes, {
-      initialEntries: ["/", "/products", "/products/cart"],
+      initialEntries: ["/", "/products", "/products/cart", "/about"],
       initialIndex: 1,
     });
 
@@ -154,7 +181,7 @@ describe("should render CartPage component", () => {
     const user = userEvent.setup();
 
     const router = createMemoryRouter(routes, {
-      initialEntries: ["/", "/products", "/products/cart"],
+      initialEntries: ["/", "/products", "/products/cart", "/about"],
       initialIndex: 1,
     });
 
@@ -210,6 +237,37 @@ describe("should render CartPage component", () => {
     const productPrice = screen.queryByTestId("total-price");
 
     expect(productPrice.textContent).toEqual("219.90$");
+
+    screen.debug();
+  });
+
+  it("it shouldn't decrease the quantity to 0", async () => {
+    const user = userEvent.setup();
+
+    const router = createMemoryRouter(routes, {
+      initialEntries: ["/", "/products", "/products/cart", "/about"],
+      initialIndex: 1,
+    });
+
+    render(<RouterProvider router={router} />);
+
+    const addToCartBtn = await screen.findAllByRole("button");
+
+    const cartIcon = screen.queryByTestId("cart");
+
+    const decreaseQuantity = screen.queryAllByTestId("decrease-quantity");
+
+    const productQuantity = screen.queryAllByTestId("product-quantity");
+
+    await user.click(addToCartBtn[0]);
+
+    await user.click(decreaseQuantity[0]);
+
+    expect(productQuantity[0].value).toEqual("1");
+
+    expect(productQuantity[0].value).not.toEqual("0");
+
+    await user.click(cartIcon);
 
     screen.debug();
   });

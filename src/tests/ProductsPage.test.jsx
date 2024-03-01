@@ -3,7 +3,7 @@ import { createMemoryRouter, RouterProvider } from "react-router-dom";
 import ProductsPage from "../components/ProductsPage";
 
 describe("should render ProductPage cart component", () => {
-  it("it should the content of this component", () => {
+  it("it should the content of this componentq", () => {
     const routes = [
       {
         path: "/",

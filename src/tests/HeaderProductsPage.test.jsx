@@ -16,5 +16,19 @@ describe("Should render HeaderProductsPage component", () => {
     expect(screen.queryByText("Products").textContent).toMatch(/products/i);
 
     expect(screen.queryByText("All").textContent).toMatch(/All/i);
+
+    expect(screen.queryByText("Jewelery").textContent).toMatch(/jewelery/i);
+
+    expect(screen.queryByText("Men's Clothing").textContent).toMatch(
+      /men's clothing/i,
+    );
+
+    expect(screen.queryByText("Women's Clothing").textContent).toMatch(
+      /women's clothing/i,
+    );
+
+    expect(screen.queryByText("Electronics").textContent).toMatch(
+      /electronics/i,
+    );
   });
 });

@@ -116,4 +116,43 @@ describe("should render NavBar component with Links", () => {
       screen.queryByRole("button", { name: "Shop Now" }),
     ).toBeInTheDocument();
   });
+
+  it("should nagivate to AboutPage", async () => {
+    const router = createMemoryRouter(routes, {
+      initialEntries: ["", "/products", "/products/cart", "/about"],
+      initialIndex: 0,
+    });
+
+    render(<RouterProvider router={router} />);
+
+    const user = userEvent.setup();
+
+    const aboutLink = screen.getByTestId("about");
+
+    await user.click(aboutLink);
+
+    screen.debug();
+
+    expect(
+      screen.queryByText("This store is real, and the products are not fake."),
+    ).toBeInTheDocument();
+
+    expect(
+      screen.queryByText(
+        "Products images and information is provided by FakeStore API.",
+      ),
+    ).toBeInTheDocument();
+
+    expect(
+      screen.queryByText(
+        "Home page background photo by charlesdeluvio on Unsplash.",
+      ).textContent,
+    ).toMatch(/home page background photo by charlesdeluvio on unsplash./i);
+
+    expect(
+      screen.queryByText(
+        "Home page store logo photo by Manny Becerra on Unsplash.",
+      ).textContent,
+    ).toMatch(/home page store logo photo by manny becerra on unsplash./i);
+  });
 });

@@ -70,11 +70,13 @@ const FetchProducts = () => {
 
   function filterProductsByCategory(e) {
     const event = e.target.value;
-    console.log(event);
     const filterProducts = products.filter((obj) =>
       obj.category.includes(event),
     );
     setFilteredProducts(filterProducts);
+    if (event === "all") {
+      setFilteredProducts(products);
+    }
   }
 
   const url = "https://fakestoreapi.com/products";

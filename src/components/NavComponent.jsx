@@ -1,17 +1,17 @@
 import { Link } from "react-router-dom";
-import styles from "./NavBar.module.css";
+import styles from "./NavComponent.module.css";
 
-function NavBar() {
+function NavComponent() {
   return (
-    <>
-      <nav className={styles.navbarContainer}>
-        <ul>
+    <header className={styles.headerContainer}>
+      <nav className={styles.navContainer}>
+        <ul className={styles.navContent}>
           <li>
             <Link to="/">
               <img
                 className={styles.storeLogo}
                 src="./store-logo.jpg"
-                alt="Store logo"
+                alt="clothing store logo"
               />
             </Link>
           </li>
@@ -35,14 +35,14 @@ function NavBar() {
               <img
                 className={styles.navBarCart}
                 src="./shopping-cart.svg"
-                alt="Cart"
+                alt="clothing store shopping cart"
               />
             </Link>
           </li>
         </ul>
       </nav>
-    </>
+    </header>
   );
 }
 
-export default NavBar;
+export default NavComponent;

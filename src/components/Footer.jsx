@@ -18,23 +18,31 @@ function Footer() {
             <img className={styles.footerSvgs} src="./compass.svg" alt="" />
           </div>
           <li>
-            <Link data-testid="footer-home" to="/">
+            <Link className={styles.homeLink} data-testid="footer-home" to="/">
               Home
             </Link>
           </li>
           <li>
-            <Link data-testid="footer-products" to="/products">
+            <Link
+              className={styles.productsLink}
+              data-testid="footer-products"
+              to="/products"
+            >
               Products
             </Link>
           </li>
           <li>
-            <Link data-testid="footer-about" to="/about">
+            <Link
+              className={styles.aboutLink}
+              data-testid="footer-about"
+              to="/about"
+            >
               About
             </Link>
           </li>
         </div>
         <div className={styles.footerContactSection}>
-          <h3>Contact Us</h3>
+          <h3 className={styles.contactUs}>Contact Us</h3>
           <div className={styles.locationContainer}>
             <p>Location</p>
             <img className={styles.footerSvgs} src="./map.svg" alt="" />

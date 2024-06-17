@@ -1,8 +1,8 @@
-import NavBar from "./components/NavBar";
+import NavComponent from "./components/NavComponent";
 import Footer from "./components/Footer";
 import { Outlet } from "react-router-dom";
 
-import "./style.css";
+import "./index.css";
 
 import React from "react";
 
@@ -18,9 +18,9 @@ function App() {
       <div className="cartItemsAmount">
         <p data-testid="products-amount">{amountOfProductsInCart}</p>
       </div>
-      <NavBar />
-      <Outlet context={[productsToCart, setProductsToCart]} />
-      <Footer />
+      <NavComponent />
+      {/* <Outlet context={[productsToCart, setProductsToCart]} /> */}
+      {/* <Footer /> */}
     </>
   );
 }

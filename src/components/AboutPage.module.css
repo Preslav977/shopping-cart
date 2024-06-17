@@ -17,6 +17,22 @@
 }
 
 .aboutImg {
-  height: 400px;
-  width: 400px;
+  height: 500px;
+  /* width: 400px;
+   */
+  width: 100%;
+  object-fit: contain;
+}
+
+@media (max-width: 546px) {
+  .mainContent {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+  }
+
+  p {
+    text-align: center;
+  }
 }

@@ -1,0 +1,31 @@
+.headerContainer {
+  padding: 1em;
+}
+
+.navContent {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 80%;
+  margin: 0 auto;
+}
+
+.storeLogo {
+  width: 100px;
+  height: 50px;
+  object-fit: cover;
+}
+
+.navBarCart {
+  width: 40px;
+}
+
+@media screen and (max-width: 600px) {
+  .headerContainer {
+    padding: 0 0.5em 0 0.5em;
+  }
+
+  .navContent {
+    width: 100%;
+  }
+}

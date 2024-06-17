@@ -29,6 +29,7 @@ const FetchProducts = () => {
   function increaseProductQuantity(product) {
     setFilteredProducts(
       filteredProducts.map((productObj) => {
+        console.log(productObj);
         if (productObj.id === product.id) {
           return { ...productObj, quantity: productObj.quantity + 1 };
         }

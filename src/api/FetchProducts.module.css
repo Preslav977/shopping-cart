@@ -8,3 +8,9 @@
   padding: 20px;
   background-color: #355360;
 }
+
+@media (max-width: 650px) {
+  .productsContainer {
+    padding-left: 0;
+  }
+}

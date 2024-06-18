@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import NavComponent from "./NavComponent";
 import HomePageFlexSection from "./HomePageFlexSection";
-
+import HomePageFlexSectionOne from "./HomePageFlexSectionOne";
 import styles from "./Homepage.module.css";
 
 function Homepage() {
@@ -44,6 +44,7 @@ function Homepage() {
         </div>
       </main>
       <HomePageFlexSection />
+      <HomePageFlexSectionOne />
     </>
   );
 }

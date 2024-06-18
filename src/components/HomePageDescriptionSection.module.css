@@ -1,0 +1,28 @@
+.homePageDescriptionContainer {
+  max-width: 1300px;
+  margin: 0 auto;
+  padding: 1.5em;
+}
+
+.homePageDescriptionContent {
+  display: flex;
+  justify-content: space-between;
+  gap: 1.5em;
+}
+
+.homePageDescriptionContent p {
+  font-size: 1.15rem;
+  width: 95%;
+  margin-bottom: 1em;
+}
+
+@media screen and (max-width: 770px) {
+  .homePageDescriptionContent {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .homePageDescriptionContent p {
+    width: 100%;
+  }
+}

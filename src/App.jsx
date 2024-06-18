@@ -13,7 +13,7 @@ function App() {
     <>
       {/* <NavComponent /> */}
       <Outlet context={[productsToCart, setProductsToCart]} />
-      {/* <Footer /> */}
+      <Footer />
     </>
   );
 }

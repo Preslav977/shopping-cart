@@ -4,73 +4,29 @@ import styles from "./Footer.module.css";
 function Footer() {
   return (
     <footer className={styles.footerContainer}>
-      <div className={styles.footerContent}>
-        <div className={styles.footerStoreLogo}>
-          <img
-            className={styles.footerStoreImg}
-            src="./store-logo.jpg"
-            alt="Store logo"
-          />
+      <div className={styles.footerContentLeft}>
+        <img className={styles.footerLogo} src="./store-logo.jpg" alt="" />
+        <p>
+          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Veritatis
+          magni ut sit, veniam magnam nesciunt corporis neque aliquam earum
+          facere repudiandae itaque exercitationem accusamus provident nemo
+          quasi! Modi, amet iste.
+        </p>
+      </div>
+      <div className={styles.footerContentRight}>
+        <div className={styles.footerRightColumnOne}>
+          <h4>Shop</h4>
+          <Link>Jewelery</Link>
+          <Link>Mens Clothing</Link>
+          <Link>Womens Clothing</Link>
+          <Link>Electronics</Link>
         </div>
-        <div className={styles.footerNavigationSvgs}>
-          <div className={styles.footerUsefulLinks}>
-            <h2>Useful Links</h2>
-            <img className={styles.footerSvgs} src="./compass.svg" alt="" />
-          </div>
-          <li>
-            <Link className={styles.homeLink} data-testid="footer-home" to="/">
-              Home
-            </Link>
-          </li>
-          <li>
-            <Link
-              className={styles.productsLink}
-              data-testid="footer-products"
-              to="/products"
-            >
-              Products
-            </Link>
-          </li>
-          <li>
-            <Link
-              className={styles.aboutLink}
-              data-testid="footer-about"
-              to="/about"
-            >
-              About
-            </Link>
-          </li>
-        </div>
-        <div className={styles.footerContactSection}>
-          <h3 className={styles.contactUs}>Contact Us</h3>
-          <div className={styles.locationContainer}>
-            <p>Location</p>
-            <img className={styles.footerSvgs} src="./map.svg" alt="" />
-          </div>
-          <p>Somewhere in EU</p>
-          <div className={styles.phoneContainer}>
-            <p>Phone</p>
-            <img className={styles.footerSvgs} src="./phone.svg" alt="" />
-          </div>
-          <div className={styles.emailContainer}>
-            <p>Email</p>
-            <img className={styles.footerSvgs} src="./email.svg" alt="" />
-          </div>
-        </div>
-        <div className={styles.socialNetworksContainer}>
-          <h4>Social Networks</h4>
-          <div>
-            <img className={styles.footerSvgs} src="./facebook.svg" alt="" />
-          </div>
-          <div>
-            <img className={styles.footerSvgs} src="./twitter.svg" alt="" />
-          </div>
-          <div>
-            <img className={styles.footerSvgs} src="./instagram.svg" alt="" />
-          </div>
-          <div>
-            <img className={styles.footerSvgs} src="./youtube.svg" alt="" />
-          </div>
+        <div className={styles.footerRightColumnTwo}>
+          <h4>Useful Links</h4>
+          <Link>Home</Link>
+          <Link>Products</Link>
+          <Link>Cart</Link>
+          <Link>About</Link>
         </div>
       </div>
     </footer>

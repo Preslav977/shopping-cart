@@ -9,17 +9,10 @@ import React from "react";
 function App() {
   const [productsToCart, setProductsToCart] = React.useState([]);
 
-  const amountOfProductsInCart = productsToCart.filter(
-    (product) => product,
-  ).length;
-
   return (
     <>
-      <div className="cartItemsAmount">
-        <p data-testid="products-amount">{amountOfProductsInCart}</p>
-      </div>
-      <NavComponent />
-      {/* <Outlet context={[productsToCart, setProductsToCart]} /> */}
+      {/* <NavComponent /> */}
+      <Outlet context={[productsToCart, setProductsToCart]} />
       {/* <Footer /> */}
     </>
   );

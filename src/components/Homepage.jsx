@@ -1,41 +1,48 @@
 import { Link } from "react-router-dom";
+import NavComponent from "./NavComponent";
 
 import styles from "./Homepage.module.css";
 
 function Homepage() {
   return (
-    <div>
+    <>
+      <NavComponent />
       <main className={styles.mainContainer}>
-        <div className={styles.mainContent}>
-          <h1>Welcome to Excalibur Clothing Store</h1>
-          <div className={styles.mainContentDesc}>
-            <p>
-              Start shopping now, by clicking the button and see all the
-              available products in the store
+        <div className={styles.mainContentSubContainerLeft}>
+          <h2 className={styles.mainContentHeader}>
+            <span className={styles.mainContentSpan}>Check our</span>
+            collection of{" "}
+            <span className={styles.mainContentSpan}> products</span>
+          </h2>
+          <div className={styles.mainContentDescription}>
+            <p>Step into the world of clothes.</p>
+            <p className={styles.mainContentThirdParagraph}>
+              Experience immersive clothes quality like never before. Embrace
+              the next level of clothes.
             </p>
           </div>
-          <p className={styles.secondRow}>
-            Why wait for tomorrow, when you can do this now!
-          </p>
-          <div className={styles.buttonContainer}>
-            <button className={styles.shopNowBtn} data-testid="button">
-              <Link
-                className={styles.shopNowBtn}
-                to="/products"
-                data-testid="shop-now-btn"
-              >
-                Shop Now
+          <div className={styles.shoppingLinkContainer}>
+            <div className={styles.shoppingLinkContent}>
+              <Link className={styles.shoppingLink} to="/products">
+                Start shopping{" "}
               </Link>
-            </button>
+              <img
+                className={styles.shoppingArrow}
+                src="./arrow.svg"
+                alt="shopping arrow"
+              />
+            </div>
           </div>
         </div>
-        <img
-          className={styles.homePageImg}
-          src="./store.jpg"
-          alt="Store Image"
-        />
+        <div className={styles.mainContentSubContainerRight}>
+          <img
+            className={styles.clothingStoreImg}
+            src="./store.jpg"
+            alt="clothing store "
+          />
+        </div>
       </main>
-    </div>
+    </>
   );
 }
 

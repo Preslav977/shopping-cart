@@ -1,7 +1,13 @@
-import { Link } from "react-router-dom";
+import { Link, useOutletContext } from "react-router-dom";
 import styles from "./NavComponent.module.css";
 
 function NavComponent() {
+  const [productsToCart, setProductsToCart] = useOutletContext();
+
+  const amountOfProductsInCart = productsToCart.filter(
+    (product) => product,
+  ).length;
+
   return (
     <header className={styles.headerContainer}>
       <nav className={styles.navContainer}>
@@ -32,11 +38,16 @@ function NavComponent() {
           </li>
           <li>
             <Link data-testid="cart" to="/products/cart">
-              <img
-                className={styles.navBarCart}
-                src="./shopping-cart.svg"
-                alt="clothing store shopping cart"
-              />
+              <div className={styles.amountOfProductsContainer}>
+                <img
+                  className={styles.navBarCart}
+                  src="./shopping-cart.svg"
+                  alt="clothing store shopping cart"
+                />
+                <div className={styles.amountItemsInCart}>
+                  <p data-testid="products-amount">{amountOfProductsInCart}</p>
+                </div>
+              </div>
             </Link>
           </li>
         </ul>

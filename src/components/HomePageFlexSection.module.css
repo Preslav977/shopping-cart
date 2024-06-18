@@ -1,0 +1,69 @@
+.homePageFlexSectionContainer {
+  max-width: 1300px;
+  margin: 0 auto;
+  display: flex;
+  margin-top: 4em;
+  padding: 1.5em;
+}
+
+.subSectionLeft,
+.subSectionRight {
+  width: 50%;
+}
+
+.subSectionLeft {
+  margin-right: 6em;
+}
+
+.sectionImage {
+  width: 100%;
+  object-fit: cover;
+}
+
+.sectionButtonContainer {
+  display: flex;
+  justify-content: center;
+}
+
+.sectionButton {
+  outline: 2px solid black;
+  display: inline-block;
+  margin-top: 2em;
+  padding: 1em 2em;
+  border-radius: 1em;
+  text-transform: uppercase;
+}
+
+.subSectionRightDescription {
+  width: 85%;
+  line-height: 1.3;
+  font-size: 1.15rem;
+}
+
+.subSectionRight h3 {
+  margin-bottom: 1.3em;
+}
+
+.subSectionRightDescription p:first-child {
+  margin-bottom: 1em;
+}
+
+@media screen and (max-width: 770px) {
+  .homePageFlexSectionContainer {
+    display: flex;
+    flex-direction: column-reverse;
+  }
+
+  .subSectionRightDescription {
+    width: 100%;
+  }
+
+  .subSectionLeft,
+  .subSectionRight {
+    width: 100%;
+  }
+
+  .subSectionRight {
+    margin-bottom: 2em;
+  }
+}

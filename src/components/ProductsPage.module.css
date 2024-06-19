@@ -1,6 +1,6 @@
 .productsContent {
   outline: 2px solid black;
-  height: 400px;
+  height: 450px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -8,9 +8,21 @@
   background-color: white;
 }
 
+.productsContent p,
+.productRatingSlash {
+  font-size: 1.15rem;
+}
+
+.productsImgContainer {
+  /* outline: 2px solid black; */
+  margin-top: 1em;
+  width: 140px;
+}
+
 .productsImg {
-  height: 150px;
-  margin-bottom: 10px;
+  max-width: 100%;
+  height: auto;
+  /* margin-bottom: 10px; */
 }
 
 .productsDescription {
@@ -23,6 +35,7 @@ input {
   margin-bottom: 20px;
   text-align: center;
   -moz-appearance: textfield;
+  appearance: textfield;
 }
 
 .productPrice {
@@ -33,7 +46,7 @@ input {
 .buttonIncrementQuantity,
 .buttonDecrementQuantity {
   /* width: 25px; */
-  padding: 0 5px 0 5px;
+  padding: 0 0.8rem 0 0.8rem;
   margin-top: 10px;
   background-color: #355360;
   /* border: 0; */
@@ -58,7 +71,7 @@ input {
 .addToCartBtn {
   background-color: #355360;
   color: #f3f6f0;
-  padding: 6px;
+  padding: 0.5em 2em;
   border: 0;
   border-radius: 6px;
 }

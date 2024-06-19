@@ -1,5 +1,5 @@
 .headerContainer {
-  padding: 1.5em;
+  padding: 1.2em;
 }
 
 .navContent {
@@ -9,7 +9,7 @@
 }
 
 .storeLogo {
-  width: 80px;
+  width: 200px;
   height: 50px;
   object-fit: cover;
 }
@@ -32,6 +32,18 @@
   background-color: #8eb2c0;
   color: white;
   text-align: center;
+}
+
+@media screen and (max-width: 620px) {
+  .storeLogo {
+    width: 7rem;
+    height: 100%;
+  }
+}
+
+.navBarCart {
+  width: 2.5rem;
+  height: 100%;
 }
 
 @media screen and (max-width: 600px) {

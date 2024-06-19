@@ -6,7 +6,7 @@
   border: 1px solid #fff;
   background-color: transparent;
   text-align: center;
-  font-size: 17px;
+  font-size: 1.2rem;
 }
 
 .dropDownMenu:hover {
@@ -22,8 +22,13 @@
   margin-left: 20px;
 }
 
-span {
-  font-size: 12px;
+.mainContentParagraph {
+  font-size: 1.2rem;
+  margin-left: 0.1rem;
+}
+
+.mainContentSpan {
+  font-size: 1.2rem;
   margin-left: 5px;
   margin-right: 5px;
 }

@@ -16,7 +16,7 @@ function NavComponent() {
             <Link to="/">
               <img
                 className={styles.storeLogo}
-                src="./store-logo.jpg"
+                src="./store-logo.svg"
                 alt="clothing store logo"
               />
             </Link>

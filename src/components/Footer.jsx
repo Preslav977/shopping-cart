@@ -5,7 +5,7 @@ function Footer() {
   return (
     <footer className={styles.footerContainer}>
       <div className={styles.footerContentLeft}>
-        <img className={styles.footerLogo} src="./store-logo.jpg" alt="" />
+        <img className={styles.footerLogo} src="./store-logo.svg" alt="" />
         <p>
           Lorem ipsum, dolor sit amet consectetur adipisicing elit. Veritatis
           magni ut sit, veniam magnam nesciunt corporis neque aliquam earum

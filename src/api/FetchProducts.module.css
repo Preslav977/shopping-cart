@@ -4,13 +4,14 @@
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
   justify-content: center;
   align-items: center;
-  gap: 20px;
-  padding: 20px;
+  gap: 1.2rem;
+  padding: 1.2em;
   background-color: #355360;
 }
 
-@media (max-width: 650px) {
+@media screen and (max-width: 56.5em) {
   .productsContainer {
-    padding-left: 0;
+    display: grid;
+    grid-template-columns: 1fr;
   }
 }

@@ -6,11 +6,14 @@ function HeaderProductsPage({ onChange, value }) {
     <div className={styles.mainContentHeader}>
       <h2 className={styles.shop}>Shop</h2>
       <div className={styles.mainContentSubHeader}>
-        <p>
+        <p className={styles.mainContentParagraph}>
           Home <span>&gt;</span>
         </p>
-        <p data-testid="products-select">
-          Products <span>&gt;</span>
+        <p
+          className={styles.mainContentParagraph}
+          data-testid="products-select"
+        >
+          Products <span className={styles.mainContentSpan}>&gt;</span>
         </p>
         <select
           className={styles.dropDownMenu}

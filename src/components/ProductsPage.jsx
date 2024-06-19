@@ -27,7 +27,7 @@ function ProductsPage({
             </p>
             <div className={styles.productsRatingContainer}>
               <p data-testid="rating">{productRating}</p>
-              <span>/</span>
+              <span className={styles.productRatingSlash}>/</span>
               <p data-testid="count">{productCount}</p>
             </div>
           </div>

@@ -3,6 +3,7 @@ import ProductsPage from "../components/ProductsPage";
 import HeaderProductsPage from "../components/HeaderProductsPage";
 import styles from "./FetchProducts.module.css";
 import { useOutletContext } from "react-router-dom";
+import NavComponent from "../components/NavComponent";
 
 const FetchProducts = () => {
   const [products, setProducts] = useState([]);
@@ -116,6 +117,7 @@ const FetchProducts = () => {
 
   return (
     <>
+      <NavComponent />
       <HeaderProductsPage
         value={selectOptions}
         onChange={(e) => {

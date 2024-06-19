@@ -3,12 +3,18 @@
   justify-content: center;
   height: 100vh;
   background-color: #8eb2c0;
+  max-width: 1300px;
+  margin: 0 auto;
+  align-items: center;
+  padding: 1.2em;
 }
 
 .emptyCartContent {
   /* outline: 2px solid black; */
+  /* height: 500px; */
+  /* height: auto; */
+  width: 80%;
   height: 500px;
-  width: 700px;
   display: flex;
   justify-content: center;
   margin-top: 20px;
@@ -45,8 +51,10 @@
 /* these styles above are used if the cart is empty */
 
 .productsCartWrapper {
-  outline: 2px solid black;
-  height: 100vh;
+  max-width: 1300px;
+  padding: 1.2em;
+  margin: 0 auto;
+  /* height: 100vh; */
   display: flex;
   justify-content: space-between;
   background-color: #8eb2c0;
@@ -68,7 +76,6 @@
 }
 
 .productsAddedToCart {
-  outline: 2px solid black;
   text-align: center;
   padding: 20px;
   background-color: white;
@@ -77,7 +84,7 @@
 .productImgContainer {
   /* outline: 2px solid black; */
   height: 100px;
-  width: 100px;
+  max-width: 100%;
 }
 
 .productDescription {
@@ -85,7 +92,6 @@
   justify-content: space-around;
   display: flex;
   align-self: flex-end;
-  /* outline: 2px solid red; */
 }
 
 .productQuantity {
@@ -98,7 +104,7 @@
 
 .estimatedPriceContainer {
   outline: 2px solid black;
-  width: 800px;
+  width: 50%;
   height: 500px;
   display: flex;
   margin-right: 20px;
@@ -106,6 +112,7 @@
   flex-direction: column;
   background-color: white;
   flex-shrink: 1;
+  padding: 0.3em;
 }
 
 .productCartSubWrapper {
@@ -149,4 +156,44 @@
 .removeButton:hover,
 .proceedToCheckoutBtn:hover {
   cursor: pointer;
+}
+
+.paypalImage {
+  width: 100%;
+}
+
+@media screen and (max-width: 770px) {
+  .productsCartWrapper {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .estimatedPriceContainer {
+    margin: 0 auto;
+    margin-top: 2em;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .emptyCartContent {
+    width: 100%;
+  }
+
+  .estimatedPriceContainer {
+    width: 90%;
+  }
+}
+
+@media screen and (max-width: 420px) {
+  .productDescription {
+    display: flex;
+    gap: 0.5em;
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .estimatedPriceContainer {
+    margin-top: 7em;
+  }
 }

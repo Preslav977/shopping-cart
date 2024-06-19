@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import styles from "./CartPage.module.css";
 import { useOutletContext } from "react-router-dom";
+import NavComponent from "./NavComponent";
 
 function CartPage() {
   const [productsToCart, setProductsToCart] = useOutletContext();
@@ -25,21 +26,24 @@ function CartPage() {
 
   if (productsToCart.length === 0) {
     return (
-      <div className={styles.emptyCartContainer}>
-        <div className={styles.emptyCartContent}>
-          <div className={styles.emptyCartSubContent}>
-            <p>Your cart is empty ! </p>
-            <p>Click the button to start shopping !</p>
-            <div className={styles.btnShopNowContainer}>
-              <button data-testid="button" className={styles.btnShopNow}>
-                <Link className={styles.btnShopNow} to="/products">
-                  Shop Now
-                </Link>
-              </button>
+      <>
+        <NavComponent />
+        <div className={styles.emptyCartContainer}>
+          <div className={styles.emptyCartContent}>
+            <div className={styles.emptyCartSubContent}>
+              <p>Your cart is empty ! </p>
+              <p>Click the button to start shopping !</p>
+              <div className={styles.btnShopNowContainer}>
+                <button data-testid="button" className={styles.btnShopNow}>
+                  <Link className={styles.btnShopNow} to="/products">
+                    Shop Now
+                  </Link>
+                </button>
+              </div>
             </div>
           </div>
         </div>
-      </div>
+      </>
     );
   }
 
@@ -68,6 +72,7 @@ function CartPage() {
 
   return (
     <>
+      <NavComponent />
       <div className={styles.productsCartWrapper}>
         <div className={styles.productCartSubWrapper}>
           <div className={styles.productsCartContainer}>
@@ -147,8 +152,8 @@ function CartPage() {
               Procced to Checkout{" "}
             </button>
           </div>
-          <div>
-            <img src="" alt="" />
+          <div className={styles.paypalImageContainer}>
+            <img className={styles.paypalImage} src="/paypal.png" alt="" />
           </div>
         </div>
       </div>

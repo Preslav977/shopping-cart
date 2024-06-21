@@ -1,5 +1,5 @@
 .headerContainer {
-  padding: 1.2em;
+  padding: var(--nav-padding);
 }
 
 .navContent {
@@ -9,13 +9,13 @@
 }
 
 .storeLogo {
-  width: 200px;
-  height: 50px;
+  width: var(--nav-image-width);
+  height: var(--nav-image-height);
   object-fit: cover;
 }
 
 .navBarCart {
-  width: 40px;
+  width: var(--nav-cart-image);
 }
 
 .amountOfProductsContainer {
@@ -26,28 +26,28 @@
   position: absolute;
   top: 0%;
   right: 0%;
-  width: 20px;
-  border: 2px solid #8eb2c0;
+  width: var(--nav-amount-cart-items-width);
+  border: var(--nav-amount-cart-border-bg-color);
   border-radius: 50%;
-  background-color: #8eb2c0;
-  color: white;
+  background-color: var(--nav-amount-cart-bg-color);
+  color: var(--nav-amount-cart-color);
   text-align: center;
 }
 
 @media screen and (max-width: 620px) {
   .storeLogo {
-    width: 7rem;
-    height: 100%;
+    width: var(--nav-image-small-screen-width);
+    height: var(--nav-image-small-screen-height);
   }
 }
 
 .navBarCart {
-  width: 2.5rem;
-  height: 100%;
+  width: var(--nav-amount-small-screen-width);
+  height: var(--nav-amount-small-screen-height);
 }
 
 @media screen and (max-width: 600px) {
   .headerContainer {
-    padding: 1.5em 0.5em;
+    padding: var(--nav-small-screen-padding);
   }
 }

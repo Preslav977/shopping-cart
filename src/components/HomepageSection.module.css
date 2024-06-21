@@ -1,0 +1,75 @@
+.sectionContainer {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  display: flex;
+  margin-top: var(--section-container-margin-top);
+  padding: var(--nav-padding);
+}
+
+.sectionContentLeft {
+  margin-right: var(--section-content-left-margin-right);
+}
+
+.sectionContentLeft,
+.sectionContentRight {
+  width: var(--section-content-left-width);
+}
+
+.sectionImage {
+  width: var(--section-image-width);
+  object-fit: cover;
+}
+
+.sectionButtonContainer {
+  display: flex;
+  justify-content: center;
+}
+
+.sectionButton {
+  outline: 2px solid black;
+  display: inline-block;
+  margin-top: var(--shopping-link-container-margin-top);
+  padding: var(--shopping-link-container-padding);
+  border-radius: var(--shopping-link-container-border-radius);
+  box-shadow: var(--shopping-link-container-box-shadow);
+  text-transform: uppercase;
+}
+
+.sectionContentRightHeader {
+  margin-bottom: var(--section-content-right-header-margin-bottom);
+  font-size: var(--section-content-right-header-font-size);
+}
+
+.sectionContentRightHeader:not(.sectionContentRightHeaderStrong) {
+  font-weight: 400;
+}
+
+.sectionContentRightParagraph {
+  margin-bottom: var(--section-content-right-paragraph-margin-bottom);
+}
+
+.sectionContentRightDescription {
+  width: var(--section-content-right-description-width);
+  line-height: var(--section-content-right-description-line-height);
+  font-size: var(--section-content-right-description-font-size);
+}
+
+@media screen and (max-width: 770px) {
+  .sectionContainer {
+    display: flex;
+    flex-direction: column-reverse;
+  }
+
+  .sectionContentRightDescription {
+    width: var(--section-image-width);
+  }
+
+  .sectionContentLeft,
+  .sectionContentRight {
+    width: var(--section-image-width);
+  }
+
+  .sectionContentRight {
+    margin-bottom: var(--section-content-right-margin-bottom);
+  }
+}

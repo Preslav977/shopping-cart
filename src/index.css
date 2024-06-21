@@ -1,4 +1,130 @@
 :root {
+  --max-width: 1300px;
+  --height: 100vh;
+  --max-width-section: 1304px;
+  --nav-padding: 1.2em;
+  --nav-small-screen-padding: 1.5em 0.5em;
+  --nav-image-width: 200px;
+  --nav-image-height: 50px;
+  --nav-image-small-screen-width: 7rem;
+  --nav-image-small-screen-height: 100%;
+  --nav-cart-image: 40px;
+  --nav-amount-cart-items-width: 20px;
+  --nav-amount-small-screen-width: 2.5rem;
+  --nav-amount-small-screen-height: 100%;
+  --nav-amount-cart-border-bg-color: 2px solid black;
+  --nav-amount-cart-bg-color: black;
+  --nav-amount-cart-color: #fff;
+
+  /* //////////////////////////////////////////////  */
+
+  --main-content-padding: 3em 0em;
+  --main-content-width: 50%;
+  --main-content-header-font-size: 3rem;
+  --main-content-header-width: 75%;
+  --main-content-span-margin-left: 0.8em;
+  --main-content-paragraph-width: 90%;
+  --main-content-description-margin-top: 1em;
+  --shopping-link-container-margin-top: 2em;
+  --shopping-link-container-padding: 1em 2em;
+  --shopping-link-container-border-radius: 1em;
+  --shopping-link-container-box-shadow: 5px 10px 10px rgb(0, 0, 0);
+  --shopping-link-container-font-weigh: 500;
+  --shopping-link-content-gap: 0.5em;
+  --shopping-arrow-svg-width: 15px;
+  --clothing-store-image-width: 100%;
+  --clothing-store-image-height: 500px;
+  --main-content-paragraph-width: 80%;
+
+  /* ///////////////////////////////////////////////////// */
+
+  --section-container-margin-top: 2em;
+  --section-content-left-margin-right: 6em;
+  --section-content-left-width: 50%;
+  --section-image-width: 100%;
+  --section-content-right-header-margin-bottom: 1.3em;
+  --section-content-right-header-font-size: 1.7rem;
+  --section-content-right-paragraph-margin-bottom: 1em;
+  --section-content-right-description-width: 85%;
+  --section-content-right-description-line-height: 1.3;
+  --section-content-right-description-font-size: 0.938rem;
+  --section-content-right-margin-bottom: 2em;
+
+  /* ////////////////////////////////////////////////////// */
+
+  --section-flex-content-paragraph-font-size: 1.125rem;
+  --section-flex-content-header-font-size: 2.5rem;
+  --section-flex-content-border-bottom: 3px solid black;
+  --section-flex-content-border-margin-bottom: 0.5em;
+  --section-flex-content-right-image-width: 400px;
+
+  /* ///////////////////////////////////////////////////////// */
+
+  --section-description-content-gap: 1.5em;
+  --section-description-header-font-size: 2.5rem;
+  --section-description-content-left-font-size: 0.938rem;
+  --section-description-content-left-width: 95%;
+  --section-description-content-left-margin-bottom: 1em;
+
+  /* /////////////////////////////////////////////////////////// */
+
+  --footer-container-padding: 4em;
+  --footer-container-bg-color: black;
+  --footer-content-left-logo: 18em;
+  --footer-content-left-font-size: 0.93rem;
+  --footer-content-color: #fff;
+  --footer-right-column-one-gap: 0.8em;
+  --footer-ght-column-header-font-size: 1.125rem;
+
+  /* /////////////////////////////////////////////// */
+
+  --section-container-margin-bottom: 0.1em;
+  --main-content-header-margin: 0.1em 0 0 0.1em;
+  --main-content-header-font-size: 2rem;
+  --main-content-sub-header-margin-left: 1em;
+  --main-content-paragraph-font-size: 1.2rem;
+  --main-content-paragraph-margin: 0 5px 0 5px;
+  --main-content-paragraph-smaller-screen-font-size: 1rem;
+
+  /* ///////////////////////////////////////////////////*/
+
+  --products-content-height: 450px;
+  --products-content-font-size: 1.15rem;
+  --products-image-container-width: 130px;
+  --product-description-padding: 5px;
+  --product-name-padding: 2px;
+  --product-price-margin: 10px 0 10px 0;
+  --product-quality-input-width: 4em;
+  --product-quality-margin-bottom: 20px;
+  --button-increment-quality-padding: 0 0.8rem 0 0.8rem;
+  --button-increment-quality-margin-bottom: 10px;
+  --add-to-cart-container-margin-top: 10px;
+  --add-to-cart-btn-padding: 0.5em 2em;
+  --add-to-cart-btn-border-radius: 6px;
+
+  /* /////////////////////////////////////////////////////// */
+
+  --empty-cart-content-width: 80%;
+  --empty-cart-height: 500px;
+  --empty-cart-margin-bottom: 20px;
+  --empty-cart-sub-content-gap: 20px;
+  --btn-shop-now-padding: 5px;
+  --btn-shop-now-border-radius: 2.5px;
+
+  /* ////////////////////////////////////////////////////////// */
+
+  --product-cart-wrapper-padding: 1em 0 1em 0;
+  --product-cart-container-height: 150px;
+  --product-img-container-height: 100px;
+  --estimated-price-container-max-height: 500px;
+  --estimated-price-container-margin: 20px 20px 0 0;
+  --estimated-price-container-padding: 0.3em;
+  --product-cart-sub-wrapper-padding: 1em;
+  --btn-increment-quality-padding: 0.15em 0.8rem 0.15em 0.8rem;
+  --estimated-total-padding: 5px;
+  --btn-pay-container-height: 500px;
+  --product-img-width: 75px;
+  --estimated-price-container-smaller-screen-margin-top: 7em;
 }
 
 *,
@@ -7,6 +133,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: "Rubik", "Courier New", Courier, monospace;
 }
 
 li {

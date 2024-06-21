@@ -1,48 +1,57 @@
 import { render, screen } from "@testing-library/react";
-import NavBar from "../components/NavBar";
+import NavComponent from "../components/NavComponent";
 import { RouterProvider, createMemoryRouter } from "react-router-dom";
 import userEvent from "@testing-library/user-event";
 import routes from "../router/routes";
 
 describe("should render NavBar component with Links", () => {
   it("should render NavBar with its content", () => {
-    const routes = [
-      {
-        path: "/",
-        element: <NavBar />,
-      },
-    ];
-
-    const router = createMemoryRouter(routes, {});
+    const router = createMemoryRouter(routes, {
+      initialEntries: ["/"],
+    });
 
     render(<RouterProvider router={router} />);
 
-    expect(screen.queryByText("Home").textContent).toMatch(/home/i);
+    // screen.debug();
 
-    expect(screen.queryByText("Products").textContent).toMatch(/products/i);
+    const homeLink = screen.queryAllByText("Home");
 
-    expect(screen.queryByText("About").textContent).toMatch(/about/i);
+    const productsLink = screen.queryAllByText("Products");
+
+    const aboutLink = screen.queryAllByText("About");
+
+    expect(homeLink[0].textContent).toMatch(/home/i);
+
+    expect(productsLink[0].textContent).toMatch(/products/i);
+
+    expect(aboutLink[0].textContent).toMatch(/about/i);
   });
 
   it("should navigate to HomePage", async () => {
     const router = createMemoryRouter(routes, {
-      initialEntries: ["", "/products", "/products/cart", "/about"],
+      initialEntries: ["/", "/products", "/products/cart", "/about"],
       initialIndex: 0,
     });
 
     render(<RouterProvider router={router} />);
 
+    screen.debug();
+
     const user = userEvent.setup();
 
-    const homeLink = screen.getByTestId("home");
+    screen.debug();
+
+    const homeLink = screen.queryByTestId("home");
 
     await user.click(homeLink);
 
-    expect(screen.getByTestId("products")).toBeInTheDocument();
+    screen.debug();
 
-    expect(screen.getByTestId("cart")).toBeInTheDocument();
+    expect(screen.queryByText("products")).toBeInTheDocument();
 
-    expect(screen.getByTestId("about")).toBeInTheDocument();
+    expect(screen.queryByTestId("cart")).toBeInTheDocument();
+
+    expect(screen.queryByTestId("about")).toBeInTheDocument();
   });
 
   it("should nagivate to ProductPage", async () => {
@@ -53,11 +62,15 @@ describe("should render NavBar component with Links", () => {
 
     render(<RouterProvider router={router} />);
 
+    screen.debug();
+
     const user = userEvent.setup();
 
     const productLink = screen.getByTestId("products");
 
     await user.click(productLink);
+
+    screen.debug();
 
     const product = await screen.findByText(
       "Fjallraven - Foldsack No. 1 Backpack, Fits 15 Laptops",
@@ -65,13 +78,17 @@ describe("should render NavBar component with Links", () => {
 
     expect(product).toBeInTheDocument();
 
-    expect(screen.queryByText("Shop")).toBeInTheDocument();
+    const shop = screen.queryAllByRole("heading", { level: 2 });
+
+    expect(shop[0].textContent).toMatch(/shop/i);
 
     expect(screen.queryByTestId("products-select")).toBeInTheDocument();
 
     expect(screen.queryByText("All").textContent).toMatch(/all/i);
 
-    expect(screen.queryByText("Jewelery").textContent).toMatch(/jewelery/i);
+    expect(screen.queryAllByText("Jewelery")[0].textContent).toMatch(
+      /jewelery/i,
+    );
 
     expect(screen.queryByText("Men's Clothing").textContent).toMatch(
       /men's clothing/i,
@@ -81,7 +98,7 @@ describe("should render NavBar component with Links", () => {
       /women's clothing/i,
     );
 
-    expect(screen.queryByText("Electronics").textContent).toMatch(
+    expect(screen.queryAllByText("Electronics")[0].textContent).toMatch(
       /electronics/i,
     );
 

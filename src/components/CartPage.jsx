@@ -1,7 +1,6 @@
 import { Link } from "react-router-dom";
 import styles from "./CartPage.module.css";
 import { useOutletContext } from "react-router-dom";
-import NavComponent from "./NavComponent";
 
 function CartPage() {
   const [productsToCart, setProductsToCart] = useOutletContext();
@@ -27,7 +26,6 @@ function CartPage() {
   if (productsToCart.length === 0) {
     return (
       <>
-        <NavComponent />
         <div className={styles.emptyCartContainer}>
           <div className={styles.emptyCartContent}>
             <div className={styles.emptyCartSubContent}>
@@ -72,7 +70,6 @@ function CartPage() {
 
   return (
     <>
-      <NavComponent />
       <div className={styles.productsCartWrapper}>
         <div className={styles.productCartSubWrapper}>
           <div className={styles.productsCartContainer}>

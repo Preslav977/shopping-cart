@@ -1,14 +1,15 @@
 .productsContainer {
-  max-width: 1300px;
-  outline: 2px solid black;
-  display: grid;
+  max-width: var(--max-width);
+  outline: var(--nav-amount-cart-border-bg-color);
   margin: 0 auto;
+  display: grid;
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
   justify-content: center;
   align-items: center;
-  gap: 1.2rem;
-  padding: 1.2em;
-  background-color: #355360;
+  gap: var(--nav-padding);
+  padding: var(--nav-padding);
+  background-color: var(--nav-amount-cart-bg-color);
+  margin-bottom: var(--section-container-margin-top);
 }
 
 @media screen and (max-width: 56.5em) {

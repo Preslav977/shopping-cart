@@ -18,7 +18,11 @@ function ProductsPage({
       <div className={styles.productsContainer}>
         <div data-testid="container" className={styles.productsContent}>
           <div className={styles.productsImgContainer}>
-            <img className={styles.productsImg} src={productImgSrc} alt="" />
+            <img
+              className={styles.productsImg}
+              src={productImgSrc}
+              alt="product image"
+            />
           </div>
           <div className={styles.productsDescription}>
             <p className={styles.productName}>{productName}</p>
@@ -49,10 +53,12 @@ function ProductsPage({
               <span>-</span>
             </button>
             <input
+              className={styles.productQualityInput}
               data-testid="product-quantity"
               type="number"
-              name=""
-              id=""
+              name="number"
+              id="number"
+              inputMode="numeric"
               value={productQuantity}
               onChange={onChange}
             />

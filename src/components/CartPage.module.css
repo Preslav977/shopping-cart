@@ -1,24 +1,22 @@
 .emptyCartContainer {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  height: var(--height);
+  padding: var(--nav-padding);
   display: flex;
   justify-content: center;
-  height: 100vh;
-  background-color: #8eb2c0;
-  max-width: 1300px;
-  margin: 0 auto;
+  background-color: var(--nav-amount-cart-bg-color);
   align-items: center;
-  padding: 1.2em;
+  margin-bottom: var(--shopping-link-container-margin-top);
 }
 
 .emptyCartContent {
-  /* outline: 2px solid black; */
-  /* height: 500px; */
-  /* height: auto; */
-  width: 80%;
-  height: 500px;
+  width: var(--empty-cart-content-width);
+  height: var(--empty-cart-height);
   display: flex;
   justify-content: center;
-  margin-top: 20px;
-  background-color: #f3f6f0;
+  margin-top: var(--empty-cart-margin-bottom);
+  background-color: var(--footer-content-color);
 }
 
 .emptyCartSubContent {
@@ -26,7 +24,7 @@
   justify-content: center;
   flex-direction: column;
   align-items: center;
-  gap: 20px;
+  gap: var(--empty-cart-sub-content-gap);
 }
 
 .btnShopNowContainer {
@@ -35,13 +33,13 @@
 }
 
 .btnShopNow {
-  margin-top: 20px;
+  margin-top: var(--empty-cart-margin-bottom);
   text-align: center;
-  background-color: #8a6460;
-  padding: 5px;
-  color: white;
+  background-color: var(--footer-container-bg-color);
+  padding: var(--btn-shop-now-padding);
+  color: var(--footer-content-color);
   border: 0;
-  border-radius: 2.5px;
+  border-radius: var(--btn-shop-now-border-radius);
 }
 
 .btnShopNow:hover {
@@ -51,40 +49,45 @@
 /* these styles above are used if the cart is empty */
 
 .productsCartWrapper {
-  max-width: 1300px;
-  padding: 1.2em;
+  max-width: var(--max-width);
   margin: 0 auto;
-  /* height: 100vh; */
   display: flex;
   justify-content: space-between;
-  background-color: #8eb2c0;
+  background-color: var(--nav-amount-cart-bg-color);
+  margin-bottom: var(--section-content-right-margin-bottom);
+  padding: var(--product-cart-wrapper-padding);
+}
+
+.productCartSubWrapper {
+  display: flex;
+  flex-direction: column;
+  width: var(--section-image-width);
+  padding: var(--product-cart-sub-wrapper-padding);
 }
 
 .productsCartContainer {
-  /* outline: 2px solid black; */
   display: flex;
   justify-content: space-between;
-  height: 50px;
-  width: 100%;
+  height: var(--nav-image-height);
+  width: var(--section-image-width);
 }
 
 .productsContent {
   display: flex;
   flex-direction: column;
-  width: 100%;
-  height: 150px;
+  width: var(--section-image-width);
+  height: var(--product-cart-container-height);
 }
 
 .productsAddedToCart {
   text-align: center;
-  padding: 20px;
-  background-color: white;
+  padding: var(--nav-amount-cart-items-width);
+  background-color: var(--footer-content-color);
 }
 
 .productImgContainer {
-  /* outline: 2px solid black; */
-  height: 100px;
-  max-width: 100%;
+  height: var(--product-img-container-height);
+  max-width: var(--clothing-store-image-width);
 }
 
 .productDescription {
@@ -95,60 +98,53 @@
 }
 
 .productQuantity {
-  width: 50px;
-  /* outline: 2px solid black; */
+  width: var(--product-quality-input-width);
   -moz-appearance: textfield;
   text-align: center;
-  margin-bottom: 0;
 }
 
 .estimatedPriceContainer {
-  outline: 2px solid black;
-  width: 50%;
-  height: 500px;
-  display: flex;
-  margin-right: 20px;
-  margin-top: 20px;
-  flex-direction: column;
-  background-color: white;
-  flex-shrink: 1;
-  padding: 0.3em;
-}
-
-.productCartSubWrapper {
+  outline: var(--nav-amount-cart-border-bg-color);
+  width: var(--main-content-width);
+  max-height: var(--btn-pay-container-height);
   display: flex;
   flex-direction: column;
-  width: 100%;
-  padding: 20px;
+  margin: var(--estimated-price-container-margin);
+  background-color: var(--footer-content-color);
+  padding: var(--estimated-price-container-padding);
 }
 
 .estimatedTotal {
   display: flex;
   justify-content: space-between;
-  padding: 5px;
+  padding: var(--estimated-total-padding);
 }
 
 .btnPayContainer {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 500px;
+  height: var(--btn-pay-container-height);
 }
 
 .buttonIncrementQuantity,
-.buttonDecrementQuantity,
+.buttonDecrementQuantity {
+  padding: var(--btn-increment-quality-padding);
+  background-color: var(--nav-amount-cart-bg-color);
+  border: 0;
+  color: var(--nav-amount-cart-color);
+}
+
 .removeButton,
 .proceedToCheckoutBtn {
-  /* width: 25px; */
-  padding: 2px 5px 2px 5px;
-  /* margin-top: 10px; */
-  background-color: #355360;
+  padding: var(--estimated-price-container-padding);
+  background-color: var(--nav-amount-cart-bg-color);
   border: 0;
-  color: white;
+  color: var(--nav-amount-cart-color);
 }
 
 .productImg {
-  width: 75px;
+  width: var(--product-img-width);
 }
 
 .buttonDecrementQuantity:hover,
@@ -159,7 +155,7 @@
 }
 
 .paypalImage {
-  width: 100%;
+  width: var(--section-image-width);
 }
 
 @media screen and (max-width: 770px) {
@@ -170,30 +166,30 @@
 
   .estimatedPriceContainer {
     margin: 0 auto;
-    margin-top: 2em;
+    margin-top: var(--section-content-right-margin-bottom);
   }
 }
 
 @media screen and (max-width: 500px) {
   .emptyCartContent {
-    width: 100%;
+    width: var(--section-image-width);
   }
 
   .estimatedPriceContainer {
-    width: 90%;
+    width: var(--main-content-paragraph-width);
   }
 }
 
 @media screen and (max-width: 420px) {
   .productDescription {
     display: flex;
-    gap: 0.5em;
-    width: 100%;
+    gap: var(--shopping-link-content-gap);
+    width: var(--clothing-store-image-width);
     flex-direction: column;
     align-items: center;
   }
 
   .estimatedPriceContainer {
-    margin-top: 7em;
+    margin-top: var(--estimated-price-container-smaller-screen-margin-top);
   }
 }

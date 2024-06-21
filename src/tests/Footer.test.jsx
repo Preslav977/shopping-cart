@@ -3,6 +3,7 @@ import { RouterProvider, createMemoryRouter } from "react-router-dom";
 import Footer from "../components/Footer";
 import userEvent from "@testing-library/user-event";
 import routes from "../router/routes";
+import { expect } from "vitest";
 
 describe("should render Footer component with Links", () => {
   it("should render the component correctly and get the textContents", () => {
@@ -23,27 +24,37 @@ describe("should render Footer component with Links", () => {
 
     expect(screen.queryByText("About").textContent).toMatch(/about/i);
 
-    expect(screen.getByRole("heading", { level: 2 }).textContent).toMatch(
-      /useful links/i,
+    expect(screen.queryByTestId("footer-paragraph")).toBeInTheDocument();
+
+    const shop = screen.queryAllByRole("heading", { level: 6 });
+
+    expect(shop[0].textContent).toMatch(/shop/i);
+
+    expect(screen.queryByText("Jewelery").textContent).toMatch(/jewelery/i);
+
+    expect(screen.queryByText("Mens Clothing").textContent).toMatch(
+      /mens clothing/i,
     );
 
-    expect(screen.getByRole("heading", { level: 3 }).textContent).toMatch(
-      /contact us/i,
+    expect(screen.queryByText("Womens Clothing").textContent).toMatch(
+      /womens clothing/i,
     );
 
-    expect(screen.getByRole("heading", { level: 4 }).textContent).toMatch(
-      /social networks/i,
+    expect(screen.queryByText("Electronics").textContent).toMatch(
+      /electronics/i,
     );
 
-    expect(screen.queryByText("Location").textContent).toMatch(/location/i);
+    const usefulLinks = screen.queryAllByRole("heading", { level: 6 });
 
-    expect(screen.queryByText("Somewhere in EU").textContent).toMatch(
-      /somewhere in eu/i,
-    );
+    expect(usefulLinks[1].textContent).toMatch(/useful links/i);
 
-    expect(screen.queryByText("Phone").textContent).toMatch(/phone/i);
+    expect(screen.queryByText("Home").textContent).toMatch(/home/i);
 
-    expect(screen.queryByText("Email").textContent).toMatch(/email/i);
+    expect(screen.queryByText("Products").textContent).toMatch(/products/i);
+
+    expect(screen.queryByText("Cart").textContent).toMatch(/cart/i);
+
+    expect(screen.queryByText("About").textContent).toMatch(/about/i);
   });
 
   it("should navigate  to HomePage", async () => {
@@ -63,9 +74,11 @@ describe("should render Footer component with Links", () => {
     expect(screen.getByTestId("footer-products")).toBeInTheDocument();
 
     expect(screen.getByTestId("footer-about")).toBeInTheDocument();
+
+    expect(screen.getByTestId("footer-cart")).toBeInTheDocument();
   });
 
-  it("should nagivate to ProductsPage", async () => {
+  it("should navigate to ProductsPage", async () => {
     const router = createMemoryRouter(routes, {
       initialEntries: ["", "/products", "/products/cart", "/about"],
       initialIndex: 0,
@@ -85,13 +98,15 @@ describe("should render Footer component with Links", () => {
 
     expect(product).toBeInTheDocument();
 
-    expect(screen.queryByText("Shop")).toBeInTheDocument();
+    expect(screen.queryAllByText("Shop")[0]).toBeInTheDocument();
 
     expect(screen.queryByTestId("products-select")).toBeInTheDocument();
 
     expect(screen.queryByText("All").textContent).toMatch(/all/i);
 
-    expect(screen.queryByText("Jewelery").textContent).toMatch(/jewelery/i);
+    expect(screen.queryAllByText("Jewelery")[0].textContent).toMatch(
+      /jewelery/i,
+    );
 
     expect(screen.queryByText("Men's Clothing").textContent).toMatch(
       /men's clothing/i,
@@ -101,12 +116,12 @@ describe("should render Footer component with Links", () => {
       /women's clothing/i,
     );
 
-    expect(screen.queryByText("Electronics").textContent).toMatch(
+    expect(screen.queryAllByText("Electronics")[0].textContent).toMatch(
       /electronics/i,
     );
   });
 
-  it("should nagivate to CartPage", async () => {
+  it("should navigate to CartPage", async () => {
     const router = createMemoryRouter(routes, {
       initialEntries: ["", "/products", "/products/cart", "/about"],
       initialIndex: 0,

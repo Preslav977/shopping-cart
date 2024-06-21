@@ -1,12 +1,17 @@
-import styles from "./HomePageDescriptionSection.module.css";
+import styles from "./HomepageDescriptionSection.module.css";
 
-function HomePageDescriptionSection() {
+function HomepageDescriptionSection() {
   return (
-    <section className={styles.homePageDescriptionContainer}>
-      <h3>World-class composable business</h3>
-      <div className={styles.homePageDescriptionContent}>
-        <div>
-          <p>
+    <section className={styles.sectionDescriptionContainer}>
+      <h5 className={styles.sectionDescriptionHeader}>
+        World-class{" "}
+        <strong className={styles.sectionDescriptionStrong}>
+          composable business.
+        </strong>
+      </h5>
+      <div className={styles.sectionDescriptionContent}>
+        <div className={styles.sectionDescriptionContentLeft}>
+          <p data-testid="homepage-description-paragraph">
             Quisque imperdiet nisl malesuada orci sodales cursus. Nunc laoreet
             vestibulum risus, quis rhoncus risus efficitur semper. Proin dapibus
             massa quam, a gravida urna lobortis a. Integer faucibus diam eget
@@ -38,7 +43,7 @@ function HomePageDescriptionSection() {
             ut laoreet.
           </p>
         </div>
-        <div>
+        <div className={styles.sectionDescriptionContentRight}>
           <p>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce
             fermentum ullamcorper libero, eu laoreet ligula iaculis sit amet.
@@ -64,4 +69,4 @@ function HomePageDescriptionSection() {
   );
 }
 
-export default HomePageDescriptionSection;
+export default HomepageDescriptionSection;

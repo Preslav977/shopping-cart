@@ -1,25 +1,36 @@
-import styles from "./HomePageFlexSection.module.css";
+import styles from "./HomepageSection.module.css";
 import { Link } from "react-router-dom";
 
-function HomePageFlexSection() {
+function HomepageSection() {
   return (
-    <section className={styles.homePageFlexSectionContainer}>
-      <div className={styles.subSectionLeft}>
+    <section className={styles.sectionContainer}>
+      <div className={styles.sectionContentLeft}>
         <div className={styles.sectionImageContainer}>
           <img
             className={styles.sectionImage}
             src="./fake-store-api.svg"
-            alt=""
+            alt="fake store API svg"
           />
         </div>
         <div className={styles.sectionButtonContainer}>
-          <Link className={styles.sectionButton}>Meet the new age</Link>
+          <Link className={styles.sectionButton} to="/products">
+            Meet the new age
+          </Link>
         </div>
       </div>
-      <div className={styles.subSectionRight}>
-        <h3>Clothes are the new age.</h3>
-        <div className={styles.subSectionRightDescription}>
-          <p>
+      <div className={styles.sectionContentRight}>
+        <h3 className={styles.sectionContentRightHeader}>
+          Clothes are the{" "}
+          <strong className={styles.sectionContentRightHeaderStrong}>
+            new age
+          </strong>
+          .
+        </h3>
+        <div className={styles.sectionContentRightDescription}>
+          <p
+            data-testid="homepage-paragraph"
+            className={styles.sectionContentRightParagraph}
+          >
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce
             elementum, nisl nec dictum vehicula, sapien metus convallis nisi, in
             tristique velit nulla tempor tortor. Ut vitae orci id purus
@@ -45,4 +56,4 @@ function HomePageFlexSection() {
   );
 }
 
-export default HomePageFlexSection;
+export default HomepageSection;

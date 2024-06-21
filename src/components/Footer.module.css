@@ -1,58 +1,101 @@
 .footerContainer {
-  max-width: 1300px;
+  padding: var(--footer-container-padding);
+  background-color: var(--footer-container-bg-color);
+}
+
+.footerContent {
+  max-width: var(--max-width);
   margin: 0 auto;
-  /* outline: 2px solid black; */
-  padding: 4em;
   display: flex;
   justify-content: space-between;
 }
 
-.footerLogo {
-  max-width: 200px;
+.footerContentLeftLogo {
+  width: var(--footer-content-left-logo);
 }
 
-.footerContentLeft p {
-  /* width: 30%; */
+.footerContentLeft > p {
+  width: var(--main-content-width);
+  font-size: var(--footer-content-left-font-size);
+  color: var(--footer-content-color);
 }
 
 .footerContentLeft {
-  width: 50%;
+  width: var(--main-content-width);
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center;
 }
 
 .footerContentRight {
   display: flex;
-  gap: 1em;
+  gap: var(--section-description-content-gap);
 }
 
 .footerRightColumnOne,
 .footerRightColumnTwo {
-  /* outline: 2px solid black; */
   display: flex;
   flex-direction: column;
-  gap: 0.5em;
-  /* width: 50%; */
+  gap: var(--footer-right-column-one-gap);
   justify-content: center;
   align-items: center;
 }
 
+.footerRightColumnHeader {
+  font-size: var(--footer-ght-column-header-font-size);
+  text-transform: uppercase;
+  color: var(--footer-content-color);
+}
+
+.footerRightColumnOne > a,
+.footerRightColumnTwo > a {
+  color: var(--footer-content-color);
+}
+
 @media screen and (max-width: 770px) {
-  .footerContainer {
+  .footerContent {
     display: flex;
     flex-direction: column;
   }
 
   .footerContentLeft {
-    margin-bottom: 1em;
-    width: 100%;
+    margin-bottom: var(--section-description-content-left-margin-bottom);
+    width: var(--clothing-store-image-width);
+  }
+
+  .footerContentLeft > p {
+    width: var(--section-image-width);
   }
 
   .footerContentRight {
     display: flex;
     align-items: center;
     justify-content: center;
+  }
+}
+
+@media screen and (max-width: 408px) {
+  .footerRightColumnOne,
+  .footerRightColumnTwo {
+    display: flex;
+    flex-direction: column;
+    align-items: first baseline;
+  }
+}
+
+@media screen and (max-width: 360px) {
+  .footerContentLeft {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .footerRightColumnOne,
+  .footerRightColumnTwo {
+    display: flex;
+    flex-direction: column;
+    gap: var(--footer-right-column-one-gap);
+    justify-content: center;
+    align-items: first baseline;
   }
 }

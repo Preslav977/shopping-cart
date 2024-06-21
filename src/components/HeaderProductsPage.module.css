@@ -1,54 +1,53 @@
-.mainContentHeader {
-  max-width: 1300px;
+.sectionContainer {
+  max-width: var(--max-width-section);
   margin: 0 auto;
+  background-color: var(--footer-container-bg-color);
+  margin-bottom: var(--section-container-margin-bottom);
+  padding: var(--nav-padding);
 }
 
-.mainContainer {
-  outline: 2px solid black;
-}
-
-.dropDownMenu {
-  border: 1px solid #fff;
-  background-color: transparent;
-  text-align: center;
-  font-size: 1.2rem;
-}
-
-.dropDownMenu:hover {
-  background-color: #8eb2c0;
+.mainContentHeader {
+  margin: var(--main-content-header-margin);
+  color: var(--footer-content-color);
+  font-size: var(--main-content-header-font-size);
 }
 
 .mainContentSubHeader {
-  /* outline: 2px solid black; */
   display: flex;
   align-items: center;
-  /* justify-content: center; */
   justify-content: flex-start;
-  margin-left: 20px;
 }
 
 .mainContentParagraph {
-  font-size: 1.2rem;
-  margin-left: 0.1rem;
+  font-size: var(--main-content-paragraph-font-size);
+  margin-left: var(--section-container-margin-bottom);
+  color: var(--footer-content-color);
+}
+
+.mainContentParagraph:nth-child(2) {
+  margin: var(--main-content-paragraph-margin);
 }
 
 .mainContentSpan {
-  font-size: 1.2rem;
-  margin-left: 5px;
-  margin-right: 5px;
+  font-size: var(--main-content-paragraph-font-size);
+  margin: var(--main-content-paragraph-margin);
 }
 
-p:nth-child(2) {
-  /* margin-left: 5px; */
-  /* margin-right: 5px; */
+.dropDownMenu {
+  border: 1px solid var(--footer-content-color);
+  background-color: transparent;
+  text-align: center;
+  font-size: var(--main-content-paragraph-font-size);
+  color: var(--footer-content-color);
 }
 
-.mainContentHeader {
-  background-color: #f3f6f0;
+.dropDownMenu:hover {
+  background-color: var(--footer-container-bg-color);
 }
 
-.shop {
-  /* text-align: center; */
-  margin-left: 20px;
-  margin-top: 5px;
+@media screen and (max-width: 400px) {
+  .mainContentParagraph,
+  .dropDownMenu {
+    font-size: var(--main-content-paragraph-smaller-screen-font-size);
+  }
 }

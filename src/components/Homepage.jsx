@@ -1,24 +1,22 @@
 import { Link } from "react-router-dom";
-import NavComponent from "./NavComponent";
-import HomePageFlexSection from "./HomePageFlexSection";
-import HomePageFlexSectionOne from "./HomePageFlexSectionOne";
-import HomePageDescriptionSection from "./HomePageDescriptionSection";
 import styles from "./Homepage.module.css";
+import HomepageSection from "./HomepageSection";
+import HomePageFlexSection from "./HomepageFlexSection";
+import HomepageDescriptionSection from "./HomepageDescriptionSection";
 
 function Homepage() {
   return (
     <>
-      <NavComponent />
       <main className={styles.mainContainer}>
-        <div className={styles.mainContentSubContainerLeft}>
+        <div className={styles.mainContentLeft}>
           <h2 className={styles.mainContentHeader}>
-            <span className={styles.mainContentSpan}>Check our</span>
+            <span className={styles.mainContentHeaderSpan}>Check our</span>
             collection of{" "}
-            <span className={styles.mainContentSpan}> products</span>
+            <span className={styles.mainContentHeaderSpan}> products</span>
           </h2>
           <div className={styles.mainContentDescription}>
             <p>Step into the world of clothes.</p>
-            <p className={styles.mainContentThirdParagraph}>
+            <p className={styles.mainContentParagraph}>
               Experience immersive clothes quality like never before. Embrace
               the next level of clothes.
             </p>
@@ -29,24 +27,27 @@ function Homepage() {
                 Start shopping{" "}
               </Link>
               <img
-                className={styles.shoppingArrow}
+                className={styles.shoppingArrowSVG}
                 src="./arrow.svg"
                 alt="shopping arrow"
               />
             </div>
           </div>
         </div>
-        <div className={styles.mainContentSubContainerRight}>
+        <div className={styles.mainContentRight}>
           <img
             className={styles.clothingStoreImg}
             src="./store.jpg"
-            alt="clothing store "
+            alt="clothing store image"
           />
         </div>
       </main>
+      <hr />
+      <HomepageSection />
+      <hr />
       <HomePageFlexSection />
-      <HomePageFlexSectionOne />
-      <HomePageDescriptionSection />
+      <hr />
+      <HomepageDescriptionSection />
     </>
   );
 }

@@ -3,8 +3,8 @@ import PropTypes from "prop-types";
 
 function HeaderProductsPage({ onChange, value }) {
   return (
-    <div className={styles.mainContentHeader}>
-      <h2 className={styles.shop}>Shop</h2>
+    <section className={styles.sectionContainer}>
+      <h2 className={styles.mainContentHeader}>Shop</h2>
       <div className={styles.mainContentSubHeader}>
         <p className={styles.mainContentParagraph}>
           Home <span>&gt;</span>
@@ -17,8 +17,8 @@ function HeaderProductsPage({ onChange, value }) {
         </p>
         <select
           className={styles.dropDownMenu}
-          name=""
-          id=""
+          name="select"
+          id="select"
           value={value}
           onChange={onChange}
         >
@@ -29,7 +29,7 @@ function HeaderProductsPage({ onChange, value }) {
           <option value="electronics">Electronics</option>
         </select>
       </div>
-    </div>
+    </section>
   );
 }
 

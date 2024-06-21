@@ -3,10 +3,10 @@ import ProductsPage from "../components/ProductsPage";
 import HeaderProductsPage from "../components/HeaderProductsPage";
 import styles from "./FetchProducts.module.css";
 import { useOutletContext } from "react-router-dom";
-import NavComponent from "../components/NavComponent";
 
 const FetchProducts = () => {
   const [products, setProducts] = useState([]);
+
   const [filteredProducts, setFilteredProducts] = useState(products);
   const [error, setError] = useState(null);
   const [loading, setLoading] = useState(true);
@@ -117,7 +117,6 @@ const FetchProducts = () => {
 
   return (
     <>
-      <NavComponent />
       <HeaderProductsPage
         value={selectOptions}
         onChange={(e) => {

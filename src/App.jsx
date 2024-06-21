@@ -11,7 +11,6 @@ function App() {
 
   return (
     <>
-      {/* <NavComponent /> */}
       <Outlet context={[productsToCart, setProductsToCart]} />
       <Footer />
     </>

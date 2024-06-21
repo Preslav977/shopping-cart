@@ -1,11 +1,11 @@
 .mainContainer {
-  max-width: 1300px;
+  max-width: var(--max-width);
   margin: 0 auto;
-  height: 100vh;
+  height: var(--height);
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 1.2em;
+  padding: var(--nav-padding);
 }
 
 .mainContent p {

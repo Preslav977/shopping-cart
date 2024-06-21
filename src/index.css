@@ -92,10 +92,15 @@
   --products-content-font-size: 1.15rem;
   --products-image-container-width: 130px;
   --product-description-padding: 5px;
+  --product-description-gap: 0.8em;
+  --product-description-margin-top: 0.5em;
   --product-name-padding: 2px;
   --product-price-margin: 10px 0 10px 0;
   --product-quality-input-width: 4em;
   --product-quality-margin-bottom: 20px;
+  --product-quality-margin-top: 1.2em;
+  --products-added-to-cart-padding: 2em;
+  --products-added-to-cart-margin-bottom: 0.5em;
   --button-increment-quality-padding: 0 0.8rem 0 0.8rem;
   --button-increment-quality-margin-bottom: 10px;
   --add-to-cart-container-margin-top: 10px;

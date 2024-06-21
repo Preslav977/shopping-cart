@@ -15,12 +15,11 @@
 
 .productsImgContainer {
   margin-top: var(--section-description-content-left-margin-bottom);
-  width: var(--products-image-container-width);
+  max-width: 100px;
 }
 
 .productsImg {
-  max-width: var(--section-image-width);
-  height: auto;
+  width: 100%;
 }
 
 .productsDescription {

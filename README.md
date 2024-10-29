@@ -6,7 +6,7 @@
 
 This project was developed with React, with a focus on utilizing React Router, PropTypes, and testing with Vitest.
 
-# About the project the project.
+# About the project the project
 
 The Shopping Cart project is a simplified version of the real store without integrating with the backend.
 Build with React using components; the user can browse through the homepage, products page, shopping cart page, and about page.
@@ -19,7 +19,7 @@ In the product page, you can increase or decrease the quantity of a project, and
 
 # Technology Used
 
-- React PropTypes: For creating and reusing the components with props to reduce redudancy.
+- React PropTypes: For creating and reusing the components with props to reduce redundancy.
 - React Router: for allowing to render using Link different components without reallocating the page
 - Vitest: for testing the component application
 

@@ -12,6 +12,10 @@ The Shopping Cart project is a simplified version of the real store without inte
 Build with React using components; the user can browse through the homepage, products page, shopping cart page, and about page.
 In the product page, you can increase or decrease the quantity of a project, and in the shopping cart page, you can see the value of a product depending on the quantity or remove a product from the card.
 
+# Live Previews
+
+- [View the live site here](https://shopping-cart-red-seven.vercel.app/)
+
 # Features
 
 - Product page, where the user can add a product by incrementing or decrementing the product quantity, also filters a product based on its category.
